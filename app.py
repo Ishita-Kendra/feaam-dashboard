@@ -302,4 +302,5 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5050, host="0.0.0.0")
+    port = int(os.getenv("PORT", 5050))
+    app.run(debug=False, port=port, host="0.0.0.0")
