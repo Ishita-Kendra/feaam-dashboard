@@ -214,6 +214,7 @@ function campaignRow(c, isSub) {
   <div class="camp-metrics">
     ${metricCol('col-sent',    c.sent,    null,       '📤', 'Sent')}
     ${metricCol('col-opened',  c.opened,  c.open_pct, '📬', 'Opened')}
+    ${isSub ? metricCol('col-clicked', c.clicked, null, '🖱️', 'Clicked') : ''}
     ${metricCol('col-replied', c.replied, c.reply_pct,'💬', 'Replied')}
     ${metricCol('col-positive',c.positive,c.positive_pct > 0 ? c.positive_pct : null,'✅','Positive')}
   </div>
@@ -245,6 +246,7 @@ function subsBlock(c) {
       <div class="sub-chart-legend">
         <span><span class="sub-chart-dot sent-dot"></span>Sent</span>
         <span><span class="sub-chart-dot opened-dot"></span>Opened</span>
+        <span><span class="sub-chart-dot clicked-dot"></span>Clicked</span>
         <span><span class="sub-chart-dot replied-dot"></span>Replied</span>
         <span><span class="sub-chart-dot positive-dot"></span>Positive</span>
       </div>
@@ -289,6 +291,7 @@ function renderSubChart(campId) {
   const datasets = [
     { label: 'Sent',     data: subs.map(s => s.sent     || 0), backgroundColor: 'rgba(165,180,252,.85)' },
     { label: 'Opened',   data: subs.map(s => s.opened   || 0), backgroundColor: 'rgba(245,158,11,.85)'  },
+    { label: 'Clicked',  data: subs.map(s => s.clicked  || 0), backgroundColor: 'rgba(56,189,248,.85)'  },
     { label: 'Replied',  data: subs.map(s => s.replied  || 0), backgroundColor: 'rgba(34,197,94,.85)'   },
     { label: 'Positive', data: subs.map(s => s.positive || 0), backgroundColor: 'rgba(249,115,22,.85)'  },
   ];

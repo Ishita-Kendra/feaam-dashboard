@@ -220,6 +220,7 @@ select option{background:var(--bg3)}
 /* metric colors */
 .col-sent   .m-val{color:#a5b4fc}
 .col-opened .m-val{color:var(--yellow)}
+.col-clicked .m-val{color:var(--blue)}
 .col-replied .m-val{color:var(--green)}
 .col-positive .m-val{color:var(--orange)}
 .col-accepted .m-val{color:var(--blue)}
@@ -293,6 +294,7 @@ select option{background:var(--bg3)}
 }
 .sent-dot    {background:rgba(165,180,252,.9)}
 .opened-dot  {background:rgba(245,158,11,.9)}
+.clicked-dot {background:rgba(56,189,248,.9)}
 .replied-dot {background:rgba(34,197,94,.9)}
 .positive-dot{background:rgba(249,115,22,.9)}
 
