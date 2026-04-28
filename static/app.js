@@ -317,11 +317,25 @@ function renderSubChart(campId) {
         x: {
           ticks: { color: '#7a85a8', font: { size: 11 } },
           grid:  { color: 'rgba(255,255,255,0.04)' },
+          title: {
+            display: true,
+            text: 'Subsequence',
+            color: '#5a6380',
+            font: { size: 11, weight: '600' },
+            padding: { top: 8 },
+          },
         },
         y: {
           ticks: { color: '#7a85a8', font: { size: 11 } },
           grid:  { color: 'rgba(255,255,255,0.04)' },
           beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Count',
+            color: '#5a6380',
+            font: { size: 11, weight: '600' },
+            padding: { bottom: 8 },
+          },
         },
       },
     },
