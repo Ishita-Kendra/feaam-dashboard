@@ -203,7 +203,6 @@ function campaignRow(c, isSub) {
       <div class="camp-name" title="${esc(c.name)}">${esc(c.name)}</div>
       <div class="camp-meta">
         <span class="status-badge ${statusClass(c.status)}">${c.status}</span>
-        ${c.client_name ? `<span class="owner-badge">${esc(c.client_name)}</span>` : ''}
         ${created ? `<span class="meta-txt">${created}</span>` : ''}
         ${c.sequence_count ? `<span class="meta-sep">·</span><span class="meta-txt">${c.sequence_count} seq</span>` : ''}
         ${isSub ? '<span class="sub-badge">Subsequence</span>' : ''}
