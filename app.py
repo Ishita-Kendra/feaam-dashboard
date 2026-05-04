@@ -293,17 +293,30 @@ def aimfox():
 @app.route("/api/smartlead/positive-leads/<int:campaign_id>")
 def positive_leads(campaign_id):
     try:
-        raw = sl(f"/campaigns/{campaign_id}/leads",
-                 {"offset": 0, "limit": 100, "status": "Interested"})
-        if isinstance(raw, list):
-            leads_list = raw
-        elif isinstance(raw, dict):
-            leads_list = raw.get("list", raw.get("data", []))
-        else:
-            leads_list = []
+        # Fetch all leads without category filter (Smartlead doesn't reliably
+        # support server-side category filtering), then filter client-side.
+        all_leads = []
+        offset, limit = 0, 100
+        while True:
+            raw = sl(f"/campaigns/{campaign_id}/leads",
+                     {"offset": offset, "limit": limit})
+            if isinstance(raw, list):
+                page = raw
+            elif isinstance(raw, dict):
+                page = raw.get("list", raw.get("data", raw.get("leads", [])))
+            else:
+                page = []
+            all_leads.extend(page)
+            if len(page) < limit:
+                break
+            offset += limit
 
         result = []
-        for lead in leads_list:
+        for lead in all_leads:
+            cat = (lead.get("lead_category") or lead.get("category") or
+                   lead.get("status") or lead.get("campaign_status") or "").lower()
+            if "interest" not in cat:
+                continue
             first = lead.get("first_name", "")
             last  = lead.get("last_name", "")
             email = lead.get("email", "")
@@ -322,8 +335,17 @@ def lead_messages():
     if not campaign_id or not email:
         return jsonify({"ok": False, "error": "Missing params"}), 400
     try:
+        # Try the documented Smartlead message-history path
         raw = sl(f"/campaigns/{campaign_id}/leads/{email}/message-history")
-        msgs = raw if isinstance(raw, list) else raw.get("list", raw.get("data", []))
+        if isinstance(raw, list):
+            msgs = raw
+        elif isinstance(raw, dict):
+            msgs = raw.get("list", raw.get("data", raw.get("history", raw.get("messages", []))))
+            # Some versions wrap in a single key — unwrap if needed
+            if not isinstance(msgs, list):
+                msgs = [raw]
+        else:
+            msgs = []
         return jsonify({"ok": True, "messages": msgs})
     except Exception as e:
         return jsonify({"ok": False, "error": str(e)}), 500
