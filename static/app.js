@@ -486,10 +486,11 @@ function renderLeadTooltip(leads, source, campId) {
 /* ── Lead message modal ───────────────────────────────────────────────────── */
 function openLeadMessages(source, campId, identifier, name) {
   document.getElementById('positiveTooltip').classList.add('hidden');
-  document.getElementById('leadModalName').textContent  = name;
-  document.getElementById('leadModalEmail').textContent = identifier;
-  document.getElementById('leadModalBody').innerHTML    =
-    '<div class="tooltip-loading">Loading messages…</div>';
+  document.getElementById('leadModalName').textContent  = 'Reply from ' + name;
+  document.getElementById('leadModalEmail').textContent =
+    source === 'sl' ? identifier : 'LinkedIn lead';
+  document.getElementById('leadModalBody').innerHTML =
+    '<div class="tooltip-loading">Loading reply…</div>';
   document.getElementById('leadModal').classList.remove('hidden');
 
   const url = source === 'sl'
@@ -498,33 +499,41 @@ function openLeadMessages(source, campId, identifier, name) {
 
   fetch(url).then(r => r.json()).then(data => {
     const body = document.getElementById('leadModalBody');
-    if (data.ok && data.messages && data.messages.length) {
-      body.innerHTML = data.messages.map(m => renderMsgBubble(m, source)).join('');
-    } else if (data.ok) {
-      body.innerHTML = '<div class="tooltip-loading">No messages found for this lead.</div>';
-    } else {
+    if (!data.ok) {
       body.innerHTML = `<div class="tooltip-loading">Error: ${esc(data.error || 'unknown')}</div>`;
+      return;
+    }
+    const msgs = data.messages || [];
+    // Show only what the lead actually wrote back
+    const replies = msgs.filter(m => isLeadReply(m));
+    if (replies.length) {
+      body.innerHTML = replies.map(m => renderReplyBubble(m)).join('');
+    } else if (msgs.length) {
+      // Fallback: API didn't distinguish direction — show everything
+      body.innerHTML = msgs.map(m => renderReplyBubble(m)).join('');
+    } else {
+      body.innerHTML = '<div class="tooltip-loading">No reply content found.</div>';
     }
   }).catch(() => {
     document.getElementById('leadModalBody').innerHTML =
-      '<div class="tooltip-loading">Failed to load messages.</div>';
+      '<div class="tooltip-loading">Failed to load reply.</div>';
   });
 }
 
-function renderMsgBubble(m, source) {
-  const rawType = (m.type || m.direction || m.message_type || m.email_type || 'sent').toLowerCase();
-  const isSent = rawType === 'sent' || rawType === 'email' || rawType === 'outgoing' || rawType === 'out';
-  const cls  = isSent ? 'sent' : 'received';
-  const from = isSent
-    ? (source === 'af' ? 'You (LinkedIn)' : 'Campaign (Sent)')
-    : 'Lead (Reply)';
+// Returns true for messages the lead sent (filters out our outbound messages)
+function isLeadReply(m) {
+  const t = (m.type || m.direction || m.message_type || m.email_type || '').toLowerCase();
+  return !(t === 'sent' || t === 'email' || t === 'outgoing' || t === 'out' || t === 'outbound');
+}
+
+function renderReplyBubble(m) {
   const rawTime = m.time || m.created_at || m.sent_time || m.updated_at || m.timestamp || '';
-  const time = rawTime ? new Date(rawTime).toLocaleString() : '';
+  const time    = rawTime ? new Date(rawTime).toLocaleString() : '';
   const content = esc(m.content || m.message || m.body || m.email_body || m.text || m.message_body || '');
   return `
-<div class="lead-msg-bubble ${cls}">
-  <div class="msg-meta">${from}${time ? ' · ' + time : ''}</div>
-  <div class="msg-body">${content}</div>
+<div class="lead-msg-bubble received">
+  ${time ? `<div class="msg-meta">${time}</div>` : ''}
+  <div class="msg-body">${content || '<em style="color:var(--muted)">No content</em>'}</div>
 </div>`;
 }
 
