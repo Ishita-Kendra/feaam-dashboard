@@ -293,19 +293,24 @@ def aimfox():
 @app.route("/api/smartlead/positive-leads/<int:campaign_id>")
 def positive_leads(campaign_id):
     try:
-        # Fetch all leads without category filter (Smartlead doesn't reliably
-        # support server-side category filtering), then filter client-side.
         all_leads = []
         offset, limit = 0, 100
         while True:
-            raw = sl(f"/campaigns/{campaign_id}/leads",
-                     {"offset": offset, "limit": limit})
+            p = {"offset": offset, "limit": limit, "api_key": SL_KEY}
+            r = requests.get(f"{SL_BASE}/campaigns/{campaign_id}/leads",
+                             params=p, timeout=20)
+            if not r.ok:
+                return jsonify({"ok": False,
+                                "error": f"Smartlead {r.status_code}: {r.text[:300]}"}), 500
+            raw = r.json()
+
             if isinstance(raw, list):
                 page = raw
             elif isinstance(raw, dict):
                 page = raw.get("list", raw.get("data", raw.get("leads", [])))
             else:
                 page = []
+
             all_leads.extend(page)
             if len(page) < limit:
                 break
@@ -406,13 +411,15 @@ def af_lead_messages():
 @app.route("/api/debug/sl-leads/<int:campaign_id>")
 def debug_sl_leads(campaign_id):
     """Shows raw Smartlead leads response — use to identify correct field names."""
+    p = {"offset": 0, "limit": 5, "api_key": SL_KEY}
+    r = requests.get(f"{SL_BASE}/campaigns/{campaign_id}/leads", params=p, timeout=20)
     try:
-        raw = sl(f"/campaigns/{campaign_id}/leads", {"offset": 0, "limit": 5})
-        sample = raw if isinstance(raw, list) else raw
-        return jsonify({"ok": True, "response_type": type(raw).__name__,
-                        "raw": sample})
-    except Exception as e:
-        return jsonify({"ok": False, "error": str(e)})
+        body = r.json()
+    except Exception:
+        body = r.text
+    return jsonify({"http_status": r.status_code,
+                    "response_type": type(body).__name__,
+                    "raw": body})
 
 
 # ── Health / Index ────────────────────────────────────────────────────────────
