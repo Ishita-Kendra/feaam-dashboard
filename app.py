@@ -367,7 +367,7 @@ def af_replied_leads(campaign_id):
         result = []
         for a in audience:
             state = (a.get("state") or "").lower()
-            if state not in ("reply", "done", "replied"):
+            if state != "reply":
                 continue
             profile = a.get("profile") or a
             first   = profile.get("first_name", a.get("first_name", ""))
@@ -474,7 +474,7 @@ def all_positives():
                 raw      = af_ws(f"/campaigns/{cid}/audience", {"limit": 500})
                 audience = raw.get("audience", raw if isinstance(raw, list) else [])
                 for a in audience:
-                    if (a.get("state") or "").lower() not in ("reply", "done", "replied"):
+                    if (a.get("state") or "").lower() != "reply":
                         continue
                     profile = a.get("profile") or a
                     first   = profile.get("first_name", a.get("first_name", ""))
