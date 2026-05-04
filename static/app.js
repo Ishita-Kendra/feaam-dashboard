@@ -6,6 +6,8 @@ let refreshTimer = null;
 let countdownVal = 60;
 const AUTO_SEC = 60;
 const subCharts = {};   // campId -> Chart instance
+const positiveLeadsCache = {};  // campId -> leads[]
+let _tooltipHideTimer = null;
 
 /* ── Boot ─────────────────────────────────────────────────────────────────── */
 let lastClickFetch = 0;
@@ -215,7 +217,7 @@ function campaignRow(c, isSub) {
     ${metricCol('col-opened',  c.opened,  c.open_pct, '📬', 'Opened')}
     ${isSub ? metricCol('col-clicked', c.clicked, null, '🖱️', 'Clicked') : ''}
     ${metricCol('col-replied', c.replied, c.reply_pct,'💬', 'Replied')}
-    ${metricCol('col-positive',c.positive,c.positive_pct > 0 ? c.positive_pct : null,'✅','Positive')}
+    ${c.positive > 0 ? positiveMetricCol(c) : metricCol('col-positive', 0, null, '✅', 'Positive')}
   </div>
 </div>`;
 }
@@ -382,6 +384,130 @@ function afCampaignRow(c) {
     ${metricCol('col-replied',  c.replied,  c.reply_pct,    '💬', 'Replied')}
   </div>
 </div>`;
+}
+
+/* ── Positive leads metric (hoverable) ────────────────────────────────────── */
+function positiveMetricCol(c) {
+  const pctVal = c.positive_pct > 0 ? c.positive_pct : null;
+  const pctClass = pctVal == null ? '' : pctVal >= 30 ? 'good' : pctVal >= 10 ? 'mid' : 'low';
+  return `
+<div class="metric-col col-positive positive-hoverable"
+     onmouseenter="showPositiveTooltip(this, ${c.id})"
+     onmouseleave="scheduleHideTooltip()">
+  <span class="m-val">${fmt(c.positive)}</span>
+  ${pctVal != null ? `<span class="m-pct ${pctClass}">${pctVal}%</span>` : '<span class="m-pct neutral">—</span>'}
+  <span class="m-label"><span class="m-icon">✅</span>Positive</span>
+</div>`;
+}
+
+/* ── Positive tooltip logic ───────────────────────────────────────────────── */
+function showPositiveTooltip(el, campId) {
+  cancelHideTooltip();
+  const rect = el.getBoundingClientRect();
+  const tip  = document.getElementById('positiveTooltip');
+  tip.style.top  = (rect.bottom + window.scrollY + 6) + 'px';
+  tip.style.left = 'auto';
+  tip.style.right = (document.documentElement.clientWidth - rect.right) + 'px';
+  tip.dataset.campId = campId;
+  tip.classList.remove('hidden');
+  loadTooltipLeads(campId);
+}
+
+function scheduleHideTooltip() {
+  _tooltipHideTimer = setTimeout(() => {
+    document.getElementById('positiveTooltip').classList.add('hidden');
+  }, 200);
+}
+
+function cancelHideTooltip() {
+  if (_tooltipHideTimer) { clearTimeout(_tooltipHideTimer); _tooltipHideTimer = null; }
+}
+
+function loadTooltipLeads(campId) {
+  const leadsEl = document.getElementById('tooltipLeads');
+  const titleEl = document.getElementById('tooltipTitle');
+  if (positiveLeadsCache[campId]) {
+    renderTooltipLeads(positiveLeadsCache[campId], campId);
+    return;
+  }
+  leadsEl.innerHTML = '<div class="tooltip-loading">Loading…</div>';
+  titleEl.textContent = 'Positive Leads';
+  fetch(`/api/smartlead/positive-leads/${campId}`)
+    .then(r => r.json())
+    .then(data => {
+      if (String(document.getElementById('positiveTooltip').dataset.campId) !== String(campId)) return;
+      if (data.ok) {
+        positiveLeadsCache[campId] = data.leads;
+        renderTooltipLeads(data.leads, campId);
+      } else {
+        leadsEl.innerHTML = '<div class="tooltip-loading">Could not load leads</div>';
+      }
+    })
+    .catch(() => {
+      leadsEl.innerHTML = '<div class="tooltip-loading">Error loading leads</div>';
+    });
+}
+
+function renderTooltipLeads(leads, campId) {
+  const leadsEl = document.getElementById('tooltipLeads');
+  const titleEl = document.getElementById('tooltipTitle');
+  titleEl.textContent = `Positive Leads (${leads.length})`;
+  if (!leads.length) {
+    leadsEl.innerHTML = '<div class="tooltip-loading">No positive leads found</div>';
+    return;
+  }
+  leadsEl.innerHTML = leads.map(l => `
+    <button class="lead-name-btn"
+      onclick="openLeadMessages(${campId}, '${esc(l.email)}', '${esc(l.name)}')">
+      ${esc(l.name)}
+    </button>`).join('');
+}
+
+/* ── Lead message modal ───────────────────────────────────────────────────── */
+function openLeadMessages(campId, email, name) {
+  document.getElementById('positiveTooltip').classList.add('hidden');
+  const modal = document.getElementById('leadModal');
+  document.getElementById('leadModalName').textContent = name;
+  document.getElementById('leadModalEmail').textContent = email;
+  document.getElementById('leadModalBody').innerHTML =
+    '<div class="tooltip-loading">Loading messages…</div>';
+  modal.classList.remove('hidden');
+
+  fetch(`/api/smartlead/lead-messages?campaign_id=${campId}&email=${encodeURIComponent(email)}`)
+    .then(r => r.json())
+    .then(data => {
+      const body = document.getElementById('leadModalBody');
+      if (data.ok && data.messages && data.messages.length) {
+        body.innerHTML = data.messages.map(m => renderMsgBubble(m)).join('');
+      } else if (data.ok) {
+        body.innerHTML = '<div class="tooltip-loading">No messages found for this lead.</div>';
+      } else {
+        body.innerHTML = `<div class="tooltip-loading">Error: ${esc(data.error || 'unknown')}</div>`;
+      }
+    })
+    .catch(() => {
+      document.getElementById('leadModalBody').innerHTML =
+        '<div class="tooltip-loading">Failed to load messages.</div>';
+    });
+}
+
+function renderMsgBubble(m) {
+  const rawType = (m.type || m.message_type || m.email_type || 'sent').toLowerCase();
+  const isSent = rawType === 'sent' || rawType === 'email' || rawType === 'outgoing';
+  const cls  = isSent ? 'sent' : 'received';
+  const from = isSent ? 'Campaign (Sent)' : 'Lead (Reply)';
+  const raw  = m.time || m.created_at || m.sent_time || m.updated_at || '';
+  const time = raw ? new Date(raw).toLocaleString() : '';
+  const content = esc(m.content || m.message || m.body || m.email_body || m.text || '');
+  return `
+<div class="lead-msg-bubble ${cls}">
+  <div class="msg-meta">${from}${time ? ' · ' + time : ''}</div>
+  <div class="msg-body">${content}</div>
+</div>`;
+}
+
+function closeLeadModal() {
+  document.getElementById('leadModal').classList.add('hidden');
 }
 
 /* ── Metric column ────────────────────────────────────────────────────────── */

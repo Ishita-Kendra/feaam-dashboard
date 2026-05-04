@@ -133,6 +133,28 @@
 
 <footer>FEAAM Dashboard · Auto-refreshes every 60 seconds · Smartlead + Aimfox</footer>
 
+<!-- ── Positive leads tooltip (global, fixed-position) ─────────────────── -->
+<div id="positiveTooltip" class="hidden"
+     onmouseenter="cancelHideTooltip()"
+     onmouseleave="scheduleHideTooltip()">
+  <div class="tooltip-title" id="tooltipTitle">Positive Leads</div>
+  <div id="tooltipLeads"></div>
+</div>
+
+<!-- ── Lead message modal ──────────────────────────────────────────────── -->
+<div id="leadModal" class="hidden" onclick="if(event.target===this)closeLeadModal()">
+  <div class="lead-modal-box">
+    <div class="lead-modal-header">
+      <div class="lead-modal-header-info">
+        <h3 id="leadModalName"></h3>
+        <div class="lead-modal-sub" id="leadModalEmail"></div>
+      </div>
+      <button class="lead-modal-close" onclick="closeLeadModal()">✕</button>
+    </div>
+    <div class="lead-modal-body" id="leadModalBody"></div>
+  </div>
+</div>
+
 <script src="/static/app.js"></script>
 </body>
 </html>

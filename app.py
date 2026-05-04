@@ -288,6 +288,47 @@ def aimfox():
         return jsonify({"ok": False, "error": str(e)}), 500
 
 
+# ── Positive Leads ───────────────────────────────────────────────────────────
+
+@app.route("/api/smartlead/positive-leads/<int:campaign_id>")
+def positive_leads(campaign_id):
+    try:
+        raw = sl(f"/campaigns/{campaign_id}/leads",
+                 {"offset": 0, "limit": 100, "status": "Interested"})
+        if isinstance(raw, list):
+            leads_list = raw
+        elif isinstance(raw, dict):
+            leads_list = raw.get("list", raw.get("data", []))
+        else:
+            leads_list = []
+
+        result = []
+        for lead in leads_list:
+            first = lead.get("first_name", "")
+            last  = lead.get("last_name", "")
+            email = lead.get("email", "")
+            name  = f"{first} {last}".strip() or email
+            result.append({"id": lead.get("id"), "name": name, "email": email})
+
+        return jsonify({"ok": True, "leads": result})
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
+@app.route("/api/smartlead/lead-messages")
+def lead_messages():
+    campaign_id = request.args.get("campaign_id")
+    email       = request.args.get("email")
+    if not campaign_id or not email:
+        return jsonify({"ok": False, "error": "Missing params"}), 400
+    try:
+        raw = sl(f"/campaigns/{campaign_id}/leads/{email}/message-history")
+        msgs = raw if isinstance(raw, list) else raw.get("list", raw.get("data", []))
+        return jsonify({"ok": True, "messages": msgs})
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
 # ── Health / Index ────────────────────────────────────────────────────────────
 
 @app.route("/api/health")
