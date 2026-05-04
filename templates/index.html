@@ -131,6 +131,38 @@
 
 </div>
 
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- ── ALL POSITIVE LEADS SECTION ─────────────────────────────────────── -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="page-section">
+
+  <div class="section-toolbar">
+    <div class="section-label pos-label">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      All Positive Leads
+    </div>
+    <div class="toolbar-right">
+      <div class="pos-tabs" id="posTabs">
+        <button class="ptab active" onclick="setPosTab('sl',this)">
+          Smartlead — Interested
+        </button>
+        <button class="ptab" onclick="setPosTab('af',this)">
+          Aimfox — Replied
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary strip -->
+  <div class="pos-summary" id="posSummary" style="display:none">
+    <span id="posSummaryText"></span>
+  </div>
+
+  <!-- Lead list -->
+  <div id="posList"><div class="loading-msg">Loading positive leads…</div></div>
+
+</div>
+
 <footer>FEAAM Dashboard · Auto-refreshes every 60 seconds · Smartlead + Aimfox</footer>
 
 <!-- ── Positive leads tooltip (global, fixed-position) ─────────────────── -->

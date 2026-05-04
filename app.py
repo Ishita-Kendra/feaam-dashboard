@@ -406,6 +406,103 @@ def af_lead_messages():
         return jsonify({"ok": False, "error": str(e)}), 500
 
 
+# ── All Positives (cross-campaign) ───────────────────────────────────────────
+
+@app.route("/api/all-positives")
+def all_positives():
+    try:
+        sl_leads, af_leads = [], []
+
+        # ── Smartlead: all FEAAM campaigns + subsequences ──────────────────
+        all_camps = sl("/campaigns")
+        if isinstance(all_camps, dict):
+            all_camps = all_camps.get("data", [])
+
+        feaam_all = [c for c in all_camps
+                     if CLIENT_FILTER.lower() in c.get("name", "").lower()
+                     or any(CLIENT_FILTER.lower() in p.get("name", "").lower()
+                            for p in all_camps
+                            if p["id"] == c.get("parent_campaign_id"))]
+
+        def fetch_sl_camp_positives(c):
+            cid   = c["id"]
+            cname = c.get("name", f"Campaign {cid}")
+            found = []
+            offset, limit = 0, 100
+            while True:
+                p = {"offset": offset, "limit": limit, "api_key": SL_KEY}
+                r = requests.get(f"{SL_BASE}/campaigns/{cid}/leads",
+                                 params=p, timeout=20)
+                if not r.ok:
+                    break
+                raw  = r.json()
+                page = raw if isinstance(raw, list) \
+                       else raw.get("list", raw.get("data", raw.get("leads", [])))
+                for lead in page:
+                    cat = (lead.get("lead_category") or lead.get("category") or
+                           lead.get("status") or lead.get("campaign_status") or "").lower()
+                    if "interest" not in cat:
+                        continue
+                    first = lead.get("first_name", "")
+                    last  = lead.get("last_name",  "")
+                    email = lead.get("email", "")
+                    found.append({
+                        "name":        f"{first} {last}".strip() or email,
+                        "email":       email,
+                        "campaign":    cname,
+                        "campaign_id": cid,
+                    })
+                if len(page) < limit:
+                    break
+                offset += limit
+            return found
+
+        with ThreadPoolExecutor(max_workers=8) as ex:
+            for batch in ex.map(fetch_sl_camp_positives, feaam_all):
+                sl_leads.extend(batch)
+
+        # ── Aimfox: all FEAAM-owner campaigns ─────────────────────────────
+        target_owner_ids = set(AF_ACCOUNTS.keys())
+        af_camps = [c for c in af_ws("/campaigns").get("campaigns", [])
+                    if any(str(o) in target_owner_ids for o in c.get("owners", []))]
+
+        def fetch_af_camp_replied(c):
+            cid   = c["id"]
+            cname = c.get("name", f"Campaign {cid}")
+            found = []
+            try:
+                raw      = af_ws(f"/campaigns/{cid}/audience", {"limit": 500})
+                audience = raw.get("audience", raw if isinstance(raw, list) else [])
+                for a in audience:
+                    if (a.get("state") or "").lower() not in ("reply", "done", "replied"):
+                        continue
+                    profile = a.get("profile") or a
+                    first   = profile.get("first_name", a.get("first_name", ""))
+                    last    = profile.get("last_name",  a.get("last_name",  ""))
+                    name    = f"{first} {last}".strip() or profile.get("name", "")
+                    lid     = a.get("id") or a.get("profile_id")
+                    found.append({
+                        "name":        name or f"Lead {lid}",
+                        "id":          lid,
+                        "campaign":    cname,
+                        "campaign_id": cid,
+                    })
+            except Exception:
+                pass
+            return found
+
+        with ThreadPoolExecutor(max_workers=5) as ex:
+            for batch in ex.map(fetch_af_camp_replied, af_camps):
+                af_leads.extend(batch)
+
+        return jsonify({"ok": True,
+                        "smartlead": sl_leads,
+                        "aimfox":    af_leads,
+                        "fetched_at": datetime.now().isoformat()})
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
 # ── Debug ─────────────────────────────────────────────────────────────────────
 
 @app.route("/api/debug/sl-leads/<int:campaign_id>")

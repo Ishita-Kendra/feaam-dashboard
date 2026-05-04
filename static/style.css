@@ -334,6 +334,67 @@ footer{
   font-size:11px;border-top:1px solid var(--border);margin-top:4px;
 }
 
+/* ── All Positive Leads section ─────────────────────────────────────────── */
+.pos-label{color:var(--green)}
+
+.pos-tabs{display:flex;gap:4px}
+.ptab{
+  background:var(--bg4);border:1px solid var(--border);color:var(--muted2);
+  border-radius:6px;padding:5px 12px;font-size:11px;font-weight:600;cursor:pointer;
+  transition:all .15s;font-family:inherit;
+}
+.ptab:hover{color:var(--text);border-color:var(--border2)}
+.ptab.active{background:var(--green);color:#000;border-color:var(--green)}
+
+.pos-summary{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:8px 18px;background:var(--bg2);border-bottom:1px solid var(--border);
+  font-size:12px;
+}
+.pos-sum-chip{
+  padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;
+}
+.sl-chip{background:rgba(124,110,247,.15);color:var(--email)}
+.af-chip{background:rgba(56,189,248,.15);color:var(--blue)}
+.pos-sum-sep{color:var(--border2)}
+.pos-sum-fetched{font-size:10px;color:var(--muted);margin-left:4px}
+
+.pos-camp-group{border-bottom:1px solid var(--border)}
+.pos-camp-group:last-child{border-bottom:none}
+
+.pos-camp-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 18px;background:var(--bg3);
+  border-bottom:1px solid var(--border);
+}
+.pos-camp-name{font-size:12px;font-weight:700;color:var(--green)}
+.pos-camp-count{
+  font-size:10px;font-weight:700;
+  background:rgba(34,197,94,.12);color:var(--green);
+  border-radius:20px;padding:2px 9px;
+}
+
+.pos-lead-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 18px 10px 28px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  background:var(--bg2);transition:background .1s;
+}
+.pos-lead-row:last-child{border-bottom:none}
+.pos-lead-row:hover{background:var(--bg3)}
+.pos-lead-left{flex:1;min-width:0}
+.pos-lead-name{font-size:13px;font-weight:600;color:var(--text);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pos-lead-id{font-size:11px;color:var(--muted2);margin-top:2px}
+
+.pos-reply-btn{
+  flex-shrink:0;background:rgba(34,197,94,.1);
+  border:1px solid rgba(34,197,94,.3);color:var(--green);
+  border-radius:6px;padding:5px 12px;font-size:11px;font-weight:600;
+  cursor:pointer;transition:all .15s;font-family:inherit;
+}
+.pos-reply-btn:hover{background:var(--green);color:#000}
+
 /* ── Positive leads tooltip ──────────────────────────────────────────────── */
 .positive-hoverable{cursor:default}
 .positive-hoverable .m-val{text-decoration:underline dotted var(--orange);text-underline-offset:3px}

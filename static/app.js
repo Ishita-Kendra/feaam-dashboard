@@ -1,6 +1,8 @@
 /* ── State ────────────────────────────────────────────────────────────────── */
 let slData = null;
 let afData = null;
+let allPositivesData = null;
+let posTab = 'sl';
 let afOwnerFilter = '';
 let refreshTimer = null;
 let countdownVal = 60;
@@ -78,6 +80,92 @@ async function fetchAll() {
 
   setSpinning(false);
   startCountdown();
+
+  // Fetch all positives independently (slower, doesn't block the main view)
+  fetchAllPositives();
+}
+
+/* ── All Positive Leads ───────────────────────────────────────────────────── */
+async function fetchAllPositives() {
+  document.getElementById('posList').innerHTML =
+    '<div class="loading-msg">Fetching positive leads across all campaigns…</div>';
+  document.getElementById('posSummary').style.display = 'none';
+  try {
+    const res = await fetch('/api/all-positives').then(r => r.json());
+    if (res.ok) {
+      allPositivesData = res;
+      renderAllPositives();
+    } else {
+      document.getElementById('posList').innerHTML =
+        `<div class="empty-msg">Could not load: ${esc(res.error || 'unknown error')}</div>`;
+    }
+  } catch (e) {
+    document.getElementById('posList').innerHTML =
+      '<div class="empty-msg">Failed to fetch positive leads.</div>';
+  }
+}
+
+function setPosTab(tab, btn) {
+  posTab = tab;
+  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAllPositives();
+}
+
+function renderAllPositives() {
+  if (!allPositivesData) return;
+  const leads = posTab === 'sl'
+    ? (allPositivesData.smartlead || [])
+    : (allPositivesData.aimfox   || []);
+
+  const slCount = (allPositivesData.smartlead || []).length;
+  const afCount = (allPositivesData.aimfox   || []).length;
+  const summary = document.getElementById('posSummary');
+  summary.style.display = 'flex';
+  document.getElementById('posSummaryText').innerHTML =
+    `<span class="pos-sum-chip sl-chip">${slCount} Interested</span>` +
+    `<span class="pos-sum-sep">·</span>` +
+    `<span class="pos-sum-chip af-chip">${afCount} Replied</span>` +
+    `<span class="pos-sum-fetched">as of ${new Date(allPositivesData.fetched_at).toLocaleTimeString()}</span>`;
+
+  const list = document.getElementById('posList');
+  if (!leads.length) {
+    list.innerHTML = `<div class="empty-msg">No ${posTab === 'sl' ? 'Interested' : 'Replied'} leads found across campaigns.</div>`;
+    return;
+  }
+
+  // Group by campaign
+  const byCamp = {};
+  leads.forEach(l => {
+    const key = l.campaign || 'Unknown Campaign';
+    if (!byCamp[key]) byCamp[key] = { campaign_id: l.campaign_id, leads: [] };
+    byCamp[key].leads.push(l);
+  });
+
+  list.innerHTML = Object.entries(byCamp).map(([camp, group]) => `
+    <div class="pos-camp-group">
+      <div class="pos-camp-header">
+        <span class="pos-camp-name">${esc(camp)}</span>
+        <span class="pos-camp-count">${group.leads.length} lead${group.leads.length > 1 ? 's' : ''}</span>
+      </div>
+      ${group.leads.map(l => posLeadRow(l, group.campaign_id)).join('')}
+    </div>`).join('');
+}
+
+function posLeadRow(l, campId) {
+  const id         = posTab === 'sl' ? esc(l.email || '') : String(l.id || '');
+  const identifier = posTab === 'sl' ? esc(l.email || '') : 'LinkedIn lead';
+  return `
+<div class="pos-lead-row">
+  <div class="pos-lead-left">
+    <div class="pos-lead-name">${esc(l.name || '—')}</div>
+    <div class="pos-lead-id">${identifier}</div>
+  </div>
+  <button class="pos-reply-btn"
+    onclick="openLeadMessages('${posTab}', ${JSON.stringify(campId)}, '${id}', '${esc(l.name || '')}')">
+    View Reply
+  </button>
+</div>`;
 }
 
 /* ── Countdown ────────────────────────────────────────────────────────────── */
