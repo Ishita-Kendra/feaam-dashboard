@@ -329,6 +329,56 @@ def lead_messages():
         return jsonify({"ok": False, "error": str(e)}), 500
 
 
+# ── Aimfox Replied Leads ─────────────────────────────────────────────────────
+
+@app.route("/api/aimfox/replied-leads/<campaign_id>")
+def af_replied_leads(campaign_id):
+    try:
+        raw      = af_ws(f"/campaigns/{campaign_id}/audience", {"limit": 200})
+        audience = raw.get("audience", raw if isinstance(raw, list) else [])
+
+        result = []
+        for a in audience:
+            state = (a.get("state") or "").lower()
+            if state not in ("reply", "done", "replied"):
+                continue
+            profile = a.get("profile") or a
+            first   = profile.get("first_name", a.get("first_name", ""))
+            last    = profile.get("last_name",  a.get("last_name",  ""))
+            name    = f"{first} {last}".strip() or profile.get("name", a.get("name", ""))
+            lid     = a.get("id") or a.get("profile_id") or a.get("lead_id")
+            if not name:
+                name = f"Lead {lid}"
+            result.append({"id": lid, "name": name})
+
+        return jsonify({"ok": True, "leads": result})
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
+@app.route("/api/aimfox/lead-messages")
+def af_lead_messages():
+    campaign_id = request.args.get("campaign_id")
+    lead_id     = request.args.get("lead_id")
+    if not campaign_id or not lead_id:
+        return jsonify({"ok": False, "error": "Missing params"}), 400
+    try:
+        # Find conversation for this lead in this campaign
+        raw   = af_ws("/conversations", {"campaign_id": campaign_id,
+                                          "profile_id": lead_id, "limit": 1})
+        convs = raw.get("conversations", raw if isinstance(raw, list) else [])
+        if not convs:
+            return jsonify({"ok": True, "messages": []})
+
+        conv_id  = convs[0].get("id") or convs[0].get("conversation_id")
+        msgs_raw = af_ws(f"/conversations/{conv_id}/messages", {"limit": 50})
+        msgs     = msgs_raw if isinstance(msgs_raw, list) \
+                   else msgs_raw.get("messages", msgs_raw.get("data", []))
+        return jsonify({"ok": True, "messages": msgs})
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
 # ── Health / Index ────────────────────────────────────────────────────────────
 
 @app.route("/api/health")
