@@ -401,6 +401,20 @@ def af_lead_messages():
         return jsonify({"ok": False, "error": str(e)}), 500
 
 
+# ── Debug ─────────────────────────────────────────────────────────────────────
+
+@app.route("/api/debug/sl-leads/<int:campaign_id>")
+def debug_sl_leads(campaign_id):
+    """Shows raw Smartlead leads response — use to identify correct field names."""
+    try:
+        raw = sl(f"/campaigns/{campaign_id}/leads", {"offset": 0, "limit": 5})
+        sample = raw if isinstance(raw, list) else raw
+        return jsonify({"ok": True, "response_type": type(raw).__name__,
+                        "raw": sample})
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)})
+
+
 # ── Health / Index ────────────────────────────────────────────────────────────
 
 @app.route("/api/health")
