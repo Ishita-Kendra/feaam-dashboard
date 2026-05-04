@@ -474,14 +474,15 @@ function afCampaignRow(c) {
 </div>`;
 }
 
-/* ── Hoverable metric cols ────────────────────────────────────────────────── */
+/* ── Hoverable + clickable metric cols ───────────────────────────────────── */
 function positiveMetricCol(c) {
   const pctVal = c.positive_pct > 0 ? c.positive_pct : null;
   const pctClass = pctVal == null ? '' : pctVal >= 30 ? 'good' : pctVal >= 10 ? 'mid' : 'low';
   return `
 <div class="metric-col col-positive positive-hoverable"
      onmouseenter="showLeadTooltip(this,'sl',${c.id})"
-     onmouseleave="scheduleHideTooltip()">
+     onmouseleave="scheduleHideTooltip()"
+     onclick="openCampaignLeads('sl',${c.id},'${esc(c.name)}')">
   <span class="m-val">${fmt(c.positive)}</span>
   ${pctVal != null ? `<span class="m-pct ${pctClass}">${pctVal}%</span>` : '<span class="m-pct neutral">—</span>'}
   <span class="m-label"><span class="m-icon">✅</span>Positive</span>
@@ -494,7 +495,8 @@ function afRepliedMetricCol(c) {
   return `
 <div class="metric-col col-replied positive-hoverable"
      onmouseenter="showLeadTooltip(this,'af','${c.id}')"
-     onmouseleave="scheduleHideTooltip()">
+     onmouseleave="scheduleHideTooltip()"
+     onclick="openCampaignLeads('af','${c.id}','${esc(c.name)}')">
   <span class="m-val">${fmt(c.replied)}</span>
   ${pctVal != null ? `<span class="m-pct ${pctClass}">${pctVal}%</span>` : '<span class="m-pct neutral">—</span>'}
   <span class="m-label"><span class="m-icon">💬</span>Replied</span>
@@ -532,25 +534,19 @@ function loadLeadTooltip(source, campId) {
 
   if (leadsCache[key]) { renderLeadTooltip(leadsCache[key], source, campId); return; }
 
-  leadsEl.innerHTML  = '<div class="tooltip-loading">Loading…</div>';
   titleEl.textContent = source === 'sl' ? 'Positive Leads' : 'Replied Leads';
 
-  const url = source === 'sl'
-    ? `/api/smartlead/positive-leads/${campId}`
-    : `/api/aimfox/replied-leads/${campId}`;
+  // Use pre-fetched allPositivesData — no per-campaign API call needed
+  if (allPositivesData) {
+    const pool  = source === 'sl' ? allPositivesData.smartlead : allPositivesData.aimfox;
+    const leads = (pool || []).filter(l => String(l.campaign_id) === String(campId));
+    leadsCache[key] = leads;
+    renderLeadTooltip(leads, source, campId);
+    return;
+  }
 
-  fetch(url).then(r => r.json()).then(data => {
-    const tip = document.getElementById('positiveTooltip');
-    if (String(tip.dataset.campId) !== String(campId) || tip.dataset.source !== source) return;
-    if (data.ok) {
-      leadsCache[key] = data.leads;
-      renderLeadTooltip(data.leads, source, campId);
-    } else {
-      leadsEl.innerHTML = '<div class="tooltip-loading">Could not load leads</div>';
-    }
-  }).catch(() => {
-    leadsEl.innerHTML = '<div class="tooltip-loading">Error loading leads</div>';
-  });
+  // allPositivesData still loading — show hint
+  leadsEl.innerHTML = '<div class="tooltip-loading">Loading… click to open</div>';
 }
 
 function renderLeadTooltip(leads, source, campId) {
@@ -627,6 +623,68 @@ function renderReplyBubble(m) {
 
 function closeLeadModal() {
   document.getElementById('leadModal').classList.add('hidden');
+}
+
+/* ── Campaign leads modal (name + email + reply per lead) ─────────────────── */
+function openCampaignLeads(source, campId, campName) {
+  document.getElementById('positiveTooltip').classList.add('hidden');
+  cancelHideTooltip();
+
+  const label = source === 'sl' ? 'Positive Leads' : 'Replied Leads';
+  document.getElementById('campLeadsTitle').textContent = campName;
+  document.getElementById('campLeadsSubtitle').textContent = label;
+  document.getElementById('campLeadsBody').innerHTML =
+    '<div class="tooltip-loading">Loading…</div>';
+  document.getElementById('campLeadsModal').classList.remove('hidden');
+
+  function render(leads) {
+    const body = document.getElementById('campLeadsBody');
+    if (!leads.length) {
+      body.innerHTML = `<div class="tooltip-loading">No ${label.toLowerCase()} found.</div>`;
+      return;
+    }
+    body.innerHTML = leads.map(l => {
+      const id = source === 'sl' ? esc(l.email || '') : String(l.id || '');
+      const sub = source === 'sl'
+        ? `<div class="camp-lead-email">${esc(l.email || '')}</div>`
+        : `<div class="camp-lead-email">LinkedIn</div>`;
+      return `
+<div class="camp-lead-row">
+  <div class="camp-lead-info">
+    <div class="camp-lead-name">${esc(l.name || '—')}</div>
+    ${sub}
+  </div>
+  <button class="pos-reply-btn"
+    onclick="closeCampLeadsModal();openLeadMessages('${source}',${JSON.stringify(campId)},'${id}','${esc(l.name || '')}')">
+    View Reply
+  </button>
+</div>`;
+    }).join('');
+  }
+
+  // Use pre-fetched data if available
+  if (allPositivesData) {
+    const pool  = source === 'sl' ? allPositivesData.smartlead : allPositivesData.aimfox;
+    render((pool || []).filter(l => String(l.campaign_id) === String(campId)));
+    return;
+  }
+
+  // Fallback: fetch directly
+  const url = source === 'sl'
+    ? `/api/smartlead/positive-leads/${campId}`
+    : `/api/aimfox/replied-leads/${campId}`;
+  fetch(url).then(r => r.json()).then(data => {
+    if (data.ok) render(data.leads || []);
+    else document.getElementById('campLeadsBody').innerHTML =
+      `<div class="tooltip-loading">Error: ${esc(data.error || 'unknown')}</div>`;
+  }).catch(() => {
+    document.getElementById('campLeadsBody').innerHTML =
+      '<div class="tooltip-loading">Failed to load.</div>';
+  });
+}
+
+function closeCampLeadsModal() {
+  document.getElementById('campLeadsModal').classList.add('hidden');
 }
 
 /* ── Metric column ────────────────────────────────────────────────────────── */

@@ -173,6 +173,20 @@
   <div id="tooltipLeads"></div>
 </div>
 
+<!-- ── Campaign leads modal (name + email list) ────────────────────────── -->
+<div id="campLeadsModal" class="hidden" onclick="if(event.target===this)closeCampLeadsModal()">
+  <div class="lead-modal-box">
+    <div class="lead-modal-header">
+      <div class="lead-modal-header-info">
+        <h3 id="campLeadsTitle"></h3>
+        <div class="lead-modal-sub" id="campLeadsSubtitle"></div>
+      </div>
+      <button class="lead-modal-close" onclick="closeCampLeadsModal()">✕</button>
+    </div>
+    <div class="lead-modal-body" id="campLeadsBody"></div>
+  </div>
+</div>
+
 <!-- ── Lead message modal ──────────────────────────────────────────────── -->
 <div id="leadModal" class="hidden" onclick="if(event.target===this)closeLeadModal()">
   <div class="lead-modal-box">
