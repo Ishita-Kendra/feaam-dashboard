@@ -1,0 +1,848 @@
+{
+  "smartlead": {
+    "ok": true,
+    "campaigns": [
+      {
+        "id": 3286421,
+        "name": "FEAAM_Wind&Pump_Mix_05-05-26",
+        "status": "ACTIVE",
+        "created_at": "2026-05-05T12:21:30.509Z",
+        "sequence_count": 3,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 72.2,
+        "total_leads": 79,
+        "sent": 79,
+        "unique_sent": 79,
+        "opened": 56,
+        "unique_opened": 56,
+        "replied": 1,
+        "positive": 1,
+        "bounced": 2,
+        "clicked": 0,
+        "open_pct": 70.9,
+        "reply_pct": 1.3,
+        "positive_pct": 100.0,
+        "subsequences": [
+          {
+            "id": 3286535,
+            "name": "FEAAM_Wind&Pump_Mix_05-05-26-open",
+            "status": "ACTIVE",
+            "created_at": "2026-05-05T12:26:00.330Z",
+            "sequence_count": 1,
+            "parent_id": 3286421,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 50.0,
+            "total_leads": 108,
+            "sent": 55,
+            "unique_sent": 55,
+            "opened": 51,
+            "unique_opened": 51,
+            "replied": 2,
+            "positive": 2,
+            "bounced": 1,
+            "clicked": 44,
+            "open_pct": 92.7,
+            "reply_pct": 3.6,
+            "positive_pct": 100.0
+          }
+        ]
+      },
+      {
+        "id": 3277490,
+        "name": "FEAAM_Wind&Pump_USA_04-05-26",
+        "status": "COMPLETED",
+        "created_at": "2026-05-04T06:34:28.675Z",
+        "sequence_count": 3,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 100.0,
+        "total_leads": 82,
+        "sent": 153,
+        "unique_sent": 82,
+        "opened": 49,
+        "unique_opened": 45,
+        "replied": 2,
+        "positive": 0,
+        "bounced": 1,
+        "clicked": 0,
+        "open_pct": 54.9,
+        "reply_pct": 2.4,
+        "positive_pct": 0.0,
+        "subsequences": [
+          {
+            "id": 3277531,
+            "name": "FEAAM_Wind&Pump_USA_04-05-26_Open",
+            "status": "ACTIVE",
+            "created_at": "2026-05-04T06:38:13.812Z",
+            "sequence_count": 1,
+            "parent_id": 3277490,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 51.1,
+            "total_leads": 92,
+            "sent": 47,
+            "unique_sent": 47,
+            "opened": 40,
+            "unique_opened": 40,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 24,
+            "open_pct": 85.1,
+            "reply_pct": 0.0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
+        "id": 3246789,
+        "name": "FEAAM_28/04",
+        "status": "ACTIVE",
+        "created_at": "2026-04-28T13:02:13.224Z",
+        "sequence_count": 3,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 67.0,
+        "total_leads": 100,
+        "sent": 140,
+        "unique_sent": 100,
+        "opened": 65,
+        "unique_opened": 58,
+        "replied": 2,
+        "positive": 0,
+        "bounced": 3,
+        "clicked": 0,
+        "open_pct": 58.0,
+        "reply_pct": 2.0,
+        "positive_pct": 0.0,
+        "subsequences": [
+          {
+            "id": 3246806,
+            "name": "Wastestream_SunsetHospitality_Mix_28/04_Open",
+            "status": "ACTIVE",
+            "created_at": "2026-04-28T13:05:40.803Z",
+            "sequence_count": 1,
+            "parent_id": 3246789,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 50.4,
+            "total_leads": 123,
+            "sent": 62,
+            "unique_sent": 62,
+            "opened": 51,
+            "unique_opened": 51,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 29,
+            "open_pct": 82.3,
+            "reply_pct": 0.0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
+        "id": 3239793,
+        "name": "FEAAM_27-04",
+        "status": "COMPLETED",
+        "created_at": "2026-04-27T12:21:01.096Z",
+        "sequence_count": 3,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 99.0,
+        "total_leads": 100,
+        "sent": 164,
+        "unique_sent": 100,
+        "opened": 71,
+        "unique_opened": 65,
+        "replied": 1,
+        "positive": 0,
+        "bounced": 1,
+        "clicked": 0,
+        "open_pct": 65.0,
+        "reply_pct": 1.0,
+        "positive_pct": 0.0,
+        "subsequences": [
+          {
+            "id": 3239809,
+            "name": "FEAAM_27/04_Open",
+            "status": "ACTIVE",
+            "created_at": "2026-04-27T12:24:02.027Z",
+            "sequence_count": 1,
+            "parent_id": 3239793,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 50.0,
+            "total_leads": 140,
+            "sent": 70,
+            "unique_sent": 70,
+            "opened": 63,
+            "unique_opened": 63,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 43,
+            "open_pct": 90.0,
+            "reply_pct": 0.0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
+        "id": 3209182,
+        "name": "FEAAM_Robot&Forklift_21-04-26",
+        "status": "ACTIVE",
+        "created_at": "2026-04-21T09:54:08.247Z",
+        "sequence_count": 6,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 63.6,
+        "total_leads": 184,
+        "sent": 252,
+        "unique_sent": 184,
+        "opened": 117,
+        "unique_opened": 116,
+        "replied": 0,
+        "positive": 0,
+        "bounced": 0,
+        "clicked": 0,
+        "open_pct": 63.0,
+        "reply_pct": 0.0,
+        "positive_pct": 0,
+        "subsequences": [
+          {
+            "id": 3209205,
+            "name": "FEEAM_21-04-26_open_subsequance ",
+            "status": "ACTIVE",
+            "created_at": "2026-04-21T10:00:55.850Z",
+            "sequence_count": 1,
+            "parent_id": 3209182,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 33.4,
+            "total_leads": 350,
+            "sent": 117,
+            "unique_sent": 117,
+            "opened": 113,
+            "unique_opened": 113,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 103,
+            "open_pct": 96.6,
+            "reply_pct": 0.0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
+        "id": 3203056,
+        "name": "FEAAM_Robort&Foklift_20-04",
+        "status": "COMPLETED",
+        "created_at": "2026-04-20T10:12:39.882Z",
+        "sequence_count": 2,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 99.5,
+        "total_leads": 189,
+        "sent": 269,
+        "unique_sent": 189,
+        "opened": 110,
+        "unique_opened": 108,
+        "replied": 0,
+        "positive": 0,
+        "bounced": 1,
+        "clicked": 0,
+        "open_pct": 57.1,
+        "reply_pct": 0.0,
+        "positive_pct": 0,
+        "subsequences": [
+          {
+            "id": 3203067,
+            "name": "FEAAM_Open_20-04",
+            "status": "ACTIVE",
+            "created_at": "2026-04-20T10:15:44.852Z",
+            "sequence_count": 1,
+            "parent_id": 3203056,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 50.9,
+            "total_leads": 216,
+            "sent": 110,
+            "unique_sent": 110,
+            "opened": 107,
+            "unique_opened": 107,
+            "replied": 1,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 90,
+            "open_pct": 97.3,
+            "reply_pct": 0.9,
+            "positive_pct": 0.0
+          }
+        ]
+      },
+      {
+        "id": 3176166,
+        "name": "FEAAM _ 14 -04",
+        "status": "COMPLETED",
+        "created_at": "2026-04-14T12:58:36.678Z",
+        "sequence_count": 3,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 96.5,
+        "total_leads": 86,
+        "sent": 168,
+        "unique_sent": 86,
+        "opened": 49,
+        "unique_opened": 42,
+        "replied": 1,
+        "positive": 0,
+        "bounced": 4,
+        "clicked": 0,
+        "open_pct": 48.8,
+        "reply_pct": 1.2,
+        "positive_pct": 0.0,
+        "subsequences": [
+          {
+            "id": 3176173,
+            "name": "Feaam_Open_14-04",
+            "status": "ACTIVE",
+            "created_at": "2026-04-14T13:01:05.447Z",
+            "sequence_count": 1,
+            "parent_id": 3176166,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 50.5,
+            "total_leads": 91,
+            "sent": 46,
+            "unique_sent": 46,
+            "opened": 44,
+            "unique_opened": 44,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 25,
+            "open_pct": 95.7,
+            "reply_pct": 0.0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
+        "id": 3169047,
+        "name": "FEAAM_Mix_13-04",
+        "status": "ACTIVE",
+        "created_at": "2026-04-13T10:51:34.612Z",
+        "sequence_count": 3,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 58.0,
+        "total_leads": 193,
+        "sent": 414,
+        "unique_sent": 187,
+        "opened": 83,
+        "unique_opened": 73,
+        "replied": 3,
+        "positive": 2,
+        "bounced": 3,
+        "clicked": 0,
+        "open_pct": 39.0,
+        "reply_pct": 1.6,
+        "positive_pct": 66.7,
+        "subsequences": [
+          {
+            "id": 3186330,
+            "name": "sub-subsequence feaam 13-03",
+            "status": "STOPPED",
+            "created_at": "2026-04-16T07:49:12.200Z",
+            "sequence_count": 1,
+            "parent_id": 3169047,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 0.0,
+            "total_leads": 33,
+            "sent": 0,
+            "unique_sent": 0,
+            "opened": 0,
+            "unique_opened": 0,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 0,
+            "open_pct": 0,
+            "reply_pct": 0,
+            "positive_pct": 0
+          },
+          {
+            "id": 3169061,
+            "name": "FEAAM Open subsequence",
+            "status": "COMPLETED",
+            "created_at": "2026-04-13T10:55:06.188Z",
+            "sequence_count": 1,
+            "parent_id": 3169047,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 98.7,
+            "total_leads": 77,
+            "sent": 76,
+            "unique_sent": 76,
+            "opened": 68,
+            "unique_opened": 68,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 34,
+            "open_pct": 89.5,
+            "reply_pct": 0.0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
+        "id": 3140884,
+        "name": "FEAAM_Mobility&SIMRacing_07-04",
+        "status": "ACTIVE",
+        "created_at": "2026-04-07T12:17:25.850Z",
+        "sequence_count": 9,
+        "parent_id": null,
+        "client_name": "",
+        "is_sub": false,
+        "progress": 5.4,
+        "total_leads": 111,
+        "sent": 0,
+        "unique_sent": 0,
+        "opened": 6,
+        "unique_opened": 0,
+        "replied": 0,
+        "positive": 0,
+        "bounced": 0,
+        "clicked": 0,
+        "open_pct": 0,
+        "reply_pct": 0,
+        "positive_pct": 0,
+        "subsequences": [
+          {
+            "id": 3140931,
+            "name": "Opened",
+            "status": "STOPPED",
+            "created_at": "2026-04-07T12:26:43.310Z",
+            "sequence_count": 1,
+            "parent_id": 3140884,
+            "client_name": "",
+            "is_sub": true,
+            "progress": 0.0,
+            "total_leads": 58,
+            "sent": 0,
+            "unique_sent": 0,
+            "opened": 0,
+            "unique_opened": 0,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 0,
+            "open_pct": 0,
+            "reply_pct": 0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
+        "id": 3132832,
+        "name": "FEAAM_Mobility - Mix All_06-04",
+        "status": "ACTIVE",
+        "created_at": "2026-04-06T05:36:42.149Z",
+        "sequence_count": 9,
+        "parent_id": null,
+        "client_name": "",
+        "is_sub": false,
+        "progress": 67.9,
+        "total_leads": 168,
+        "sent": 0,
+        "unique_sent": 0,
+        "opened": 6,
+        "unique_opened": 3,
+        "replied": 1,
+        "positive": 4,
+        "bounced": 0,
+        "clicked": 0,
+        "open_pct": 0,
+        "reply_pct": 0,
+        "positive_pct": 400.0,
+        "subsequences": [
+          {
+            "id": 3132911,
+            "name": "Open Emails",
+            "status": "COMPLETED",
+            "created_at": "2026-04-06T05:45:37.236Z",
+            "sequence_count": 1,
+            "parent_id": 3132832,
+            "client_name": "",
+            "is_sub": true,
+            "progress": 99.1,
+            "total_leads": 109,
+            "sent": 0,
+            "unique_sent": 0,
+            "opened": 1,
+            "unique_opened": 1,
+            "replied": 1,
+            "positive": 3,
+            "bounced": 0,
+            "clicked": 2,
+            "open_pct": 0,
+            "reply_pct": 0,
+            "positive_pct": 300.0
+          }
+        ]
+      },
+      {
+        "id": 3109180,
+        "name": "FEAAM - Mobility - USA 2 - 200",
+        "status": "ACTIVE",
+        "created_at": "2026-03-31T12:12:44.326Z",
+        "sequence_count": 9,
+        "parent_id": null,
+        "client_name": "",
+        "is_sub": false,
+        "progress": 2.7,
+        "total_leads": 110,
+        "sent": 87,
+        "unique_sent": 0,
+        "opened": 53,
+        "unique_opened": 1,
+        "replied": 0,
+        "positive": 0,
+        "bounced": 0,
+        "clicked": 0,
+        "open_pct": 0,
+        "reply_pct": 0,
+        "positive_pct": 0
+      },
+      {
+        "id": 3100657,
+        "name": "FEAAM _USA_Mobility_30-03-26",
+        "status": "ACTIVE",
+        "created_at": "2026-03-30T05:00:49.540Z",
+        "sequence_count": 9,
+        "parent_id": null,
+        "client_name": "",
+        "is_sub": false,
+        "progress": 4.9,
+        "total_leads": 183,
+        "sent": 0,
+        "unique_sent": 0,
+        "opened": 0,
+        "unique_opened": 0,
+        "replied": 0,
+        "positive": 5,
+        "bounced": 0,
+        "clicked": 0,
+        "open_pct": 0,
+        "reply_pct": 0,
+        "positive_pct": 0
+      },
+      {
+        "id": 3083094,
+        "name": "Feaam_Aerospace&Mobility_25-03-26",
+        "status": "ACTIVE",
+        "created_at": "2026-03-25T12:54:42.236Z",
+        "sequence_count": 9,
+        "parent_id": null,
+        "client_name": "",
+        "is_sub": false,
+        "progress": 2.4,
+        "total_leads": 126,
+        "sent": 0,
+        "unique_sent": 0,
+        "opened": 0,
+        "unique_opened": 0,
+        "replied": 0,
+        "positive": 1,
+        "bounced": 0,
+        "clicked": 0,
+        "open_pct": 0,
+        "reply_pct": 0,
+        "positive_pct": 0
+      },
+      {
+        "id": 3059643,
+        "name": "FEAAM - USA - Aerospace - 19-03-26",
+        "status": "ACTIVE",
+        "created_at": "2026-03-19T11:51:19.396Z",
+        "sequence_count": 9,
+        "parent_id": null,
+        "client_name": "",
+        "is_sub": false,
+        "progress": 6.6,
+        "total_leads": 122,
+        "sent": 0,
+        "unique_sent": 0,
+        "opened": 0,
+        "unique_opened": 0,
+        "replied": 0,
+        "positive": 1,
+        "bounced": 0,
+        "clicked": 0,
+        "open_pct": 0,
+        "reply_pct": 0,
+        "positive_pct": 0
+      }
+    ],
+    "totals": {
+      "sent": 1726,
+      "opened": 665,
+      "replied": 11,
+      "positive": 14,
+      "bounced": 15
+    },
+    "fetched_at": "2026-05-11T05:09:29.066382"
+  },
+  "aimfox": {
+    "ok": true,
+    "campaigns": [
+      {
+        "id": "efe5358d-1e2c-44b8-aa55-4e9690ec620d",
+        "name": "SIM Racing IMP",
+        "state": "ACTIVE",
+        "created_at": "2026-05-06T09:23:27.183000",
+        "owners": [
+          "439119116"
+        ],
+        "owner_names": [
+          "Ebru AVCI"
+        ],
+        "target_count": 124,
+        "sent": 41,
+        "accepted": 3,
+        "messages": 2,
+        "replied": 0,
+        "accept_pct": 7.3,
+        "reply_pct": 0.0,
+        "owner_stats": {
+          "1723192451": {
+            "sent": 0,
+            "accepted": 0
+          },
+          "439119116": {
+            "sent": 121,
+            "accepted": 0
+          }
+        }
+      },
+      {
+        "id": "7c55cc1d-4bc8-45ce-8bc7-0bec1db31ed2",
+        "name": "Opened_20-04-26,21-04-26",
+        "state": "ACTIVE",
+        "created_at": "2026-04-24T05:41:43.294000",
+        "owners": [
+          "1723192451"
+        ],
+        "owner_names": [
+          "Dr. Gerling"
+        ],
+        "target_count": 218,
+        "sent": 28,
+        "accepted": 8,
+        "messages": 12,
+        "replied": 1,
+        "accept_pct": 28.6,
+        "reply_pct": 3.6,
+        "owner_stats": {
+          "1723192451": {
+            "sent": 74,
+            "accepted": 4
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
+          }
+        }
+      },
+      {
+        "id": "835dcd82-ed6e-4297-9e4c-9748c958ccd6",
+        "name": "Opened_14-04-26",
+        "state": "ACTIVE",
+        "created_at": "2026-04-22T12:41:31.499000",
+        "owners": [
+          "1723192451"
+        ],
+        "owner_names": [
+          "Dr. Gerling"
+        ],
+        "target_count": 30,
+        "sent": 20,
+        "accepted": 2,
+        "messages": 1,
+        "replied": 1,
+        "accept_pct": 10.0,
+        "reply_pct": 5.0,
+        "owner_stats": {
+          "1723192451": {
+            "sent": 28,
+            "accepted": 2
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
+          }
+        }
+      },
+      {
+        "id": "7d290df3-218d-405b-9be3-50f84850e8b7",
+        "name": "OPENED_13-04-26",
+        "state": "ACTIVE",
+        "created_at": "2026-04-22T12:28:40.110000",
+        "owners": [
+          "1723192451"
+        ],
+        "owner_names": [
+          "Dr. Gerling"
+        ],
+        "target_count": 70,
+        "sent": 21,
+        "accepted": 3,
+        "messages": 3,
+        "replied": 1,
+        "accept_pct": 14.3,
+        "reply_pct": 4.8,
+        "owner_stats": {
+          "1723192451": {
+            "sent": 54,
+            "accepted": 2
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
+          }
+        }
+      },
+      {
+        "id": "9dc33aeb-7f96-4f83-8e48-7932f2cb8e17",
+        "name": "Open March-April 7",
+        "state": "ACTIVE",
+        "created_at": "2026-04-22T11:34:50.476000",
+        "owners": [
+          "1723192451"
+        ],
+        "owner_names": [
+          "Dr. Gerling"
+        ],
+        "target_count": 401,
+        "sent": 35,
+        "accepted": 4,
+        "messages": 9,
+        "replied": 1,
+        "accept_pct": 11.4,
+        "reply_pct": 2.9,
+        "owner_stats": {
+          "1723192451": {
+            "sent": 94,
+            "accepted": 1
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
+          }
+        }
+      },
+      {
+        "id": "97c2cd8d-2dfa-43c1-93f4-b1f573d12a66",
+        "name": "FEAAM Campaign - Mobility (LinkedIn Only)",
+        "state": "ACTIVE",
+        "created_at": "2026-04-07T13:23:33.944000",
+        "owners": [
+          "439119116"
+        ],
+        "owner_names": [
+          "Ebru AVCI"
+        ],
+        "target_count": 119,
+        "sent": 113,
+        "accepted": 26,
+        "messages": 61,
+        "replied": 6,
+        "accept_pct": 23.0,
+        "reply_pct": 5.3,
+        "owner_stats": {
+          "1723192451": {
+            "sent": 0,
+            "accepted": 0
+          },
+          "439119116": {
+            "sent": 46,
+            "accepted": 3
+          }
+        }
+      },
+      {
+        "id": "74ea96f3-a63d-4cfa-9b2e-a3f63657a6b3",
+        "name": "FEAAM Campaign - Aerospace (LinkedIn Only)",
+        "state": "ACTIVE",
+        "created_at": "2026-03-24T07:38:58.409000",
+        "owners": [
+          "439119116"
+        ],
+        "owner_names": [
+          "Ebru AVCI"
+        ],
+        "target_count": 29,
+        "sent": 29,
+        "accepted": 7,
+        "messages": 7,
+        "replied": 3,
+        "accept_pct": 24.1,
+        "reply_pct": 10.3,
+        "owner_stats": {
+          "1723192451": {
+            "sent": 0,
+            "accepted": 0
+          },
+          "439119116": {
+            "sent": 1,
+            "accepted": 0
+          }
+        }
+      }
+    ],
+    "accounts": [
+      {
+        "id": "439119116",
+        "name": "Ebru AVCI",
+        "totals": {
+          "sent": 183,
+          "accepted": 36,
+          "messages": 70,
+          "replied": 9
+        }
+      },
+      {
+        "id": "1723192451",
+        "name": "Dr. Gerling",
+        "totals": {
+          "sent": 104,
+          "accepted": 17,
+          "messages": 25,
+          "replied": 4
+        }
+      }
+    ],
+    "fetched_at": "2026-05-11T05:09:33.370552"
+  },
+  "all_positives": {
+    "ok": true,
+    "smartlead": [],
+    "aimfox": [],
+    "fetched_at": "2026-05-11T05:09:38.486579"
+  },
+  "cached_at": "2026-05-11T05:09:38.486614"
+}
