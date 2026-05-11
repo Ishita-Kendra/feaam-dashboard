@@ -3,6 +3,54 @@
     "ok": true,
     "campaigns": [
       {
+        "id": 3315039,
+        "name": "FEAAM_INT_USA_11-05-26",
+        "status": "ACTIVE",
+        "created_at": "2026-05-11T07:18:57.491Z",
+        "sequence_count": 2,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 8.0,
+        "total_leads": 87,
+        "sent": 70,
+        "unique_sent": 70,
+        "opened": 7,
+        "unique_opened": 7,
+        "replied": 0,
+        "positive": 0,
+        "bounced": 0,
+        "clicked": 0,
+        "open_pct": 10.0,
+        "reply_pct": 0.0,
+        "positive_pct": 0,
+        "subsequences": [
+          {
+            "id": 3315050,
+            "name": "FEAAM_INT_USA_11-05-26 - open ",
+            "status": "PAUSED",
+            "created_at": "2026-05-11T07:23:47.802Z",
+            "sequence_count": 1,
+            "parent_id": 3315039,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 0.0,
+            "total_leads": 7,
+            "sent": 0,
+            "unique_sent": 0,
+            "opened": 0,
+            "unique_opened": 0,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 0,
+            "open_pct": 0,
+            "reply_pct": 0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
         "id": 3286421,
         "name": "FEAAM_Wind&Pump_Mix_05-05-26",
         "status": "ACTIVE",
@@ -53,7 +101,7 @@
       {
         "id": 3277490,
         "name": "FEAAM_Wind&Pump_USA_04-05-26",
-        "status": "COMPLETED",
+        "status": "ARCHIVED",
         "created_at": "2026-05-04T06:34:28.675Z",
         "sequence_count": 3,
         "parent_id": null,
@@ -149,7 +197,7 @@
       {
         "id": 3239793,
         "name": "FEAAM_27-04",
-        "status": "COMPLETED",
+        "status": "ARCHIVED",
         "created_at": "2026-04-27T12:21:01.096Z",
         "sequence_count": 3,
         "parent_id": null,
@@ -245,7 +293,7 @@
       {
         "id": 3203056,
         "name": "FEAAM_Robort&Foklift_20-04",
-        "status": "COMPLETED",
+        "status": "ARCHIVED",
         "created_at": "2026-04-20T10:12:39.882Z",
         "sequence_count": 2,
         "parent_id": null,
@@ -293,7 +341,7 @@
       {
         "id": 3176166,
         "name": "FEAAM _ 14 -04",
-        "status": "COMPLETED",
+        "status": "ARCHIVED",
         "created_at": "2026-04-14T12:58:36.678Z",
         "sequence_count": 3,
         "parent_id": null,
@@ -364,7 +412,7 @@
           {
             "id": 3186330,
             "name": "sub-subsequence feaam 13-03",
-            "status": "STOPPED",
+            "status": "ARCHIVED",
             "created_at": "2026-04-16T07:49:12.200Z",
             "sequence_count": 1,
             "parent_id": 3169047,
@@ -435,7 +483,7 @@
           {
             "id": 3140931,
             "name": "Opened",
-            "status": "STOPPED",
+            "status": "ARCHIVED",
             "created_at": "2026-04-07T12:26:43.310Z",
             "sequence_count": 1,
             "parent_id": 3140884,
@@ -599,13 +647,13 @@
       }
     ],
     "totals": {
-      "sent": 1726,
-      "opened": 665,
+      "sent": 1796,
+      "opened": 672,
       "replied": 11,
       "positive": 14,
       "bounced": 15
     },
-    "fetched_at": "2026-05-11T05:09:29.066382"
+    "fetched_at": "2026-05-11T14:12:36.712071"
   },
   "aimfox": {
     "ok": true,
@@ -622,11 +670,11 @@
           "Ebru AVCI"
         ],
         "target_count": 124,
-        "sent": 41,
+        "sent": 49,
         "accepted": 3,
         "messages": 2,
         "replied": 0,
-        "accept_pct": 7.3,
+        "accept_pct": 6.1,
         "reply_pct": 0.0,
         "owner_stats": {
           "1723192451": {
@@ -635,7 +683,7 @@
           },
           "439119116": {
             "sent": 121,
-            "accepted": 0
+            "accepted": 1
           }
         }
       },
@@ -769,18 +817,18 @@
         "target_count": 119,
         "sent": 113,
         "accepted": 26,
-        "messages": 61,
-        "replied": 6,
+        "messages": 63,
+        "replied": 7,
         "accept_pct": 23.0,
-        "reply_pct": 5.3,
+        "reply_pct": 6.2,
         "owner_stats": {
           "1723192451": {
             "sent": 0,
             "accepted": 0
           },
           "439119116": {
-            "sent": 46,
-            "accepted": 3
+            "sent": 38,
+            "accepted": 1
           }
         }
       },
@@ -819,10 +867,10 @@
         "id": "439119116",
         "name": "Ebru AVCI",
         "totals": {
-          "sent": 183,
+          "sent": 191,
           "accepted": 36,
-          "messages": 70,
-          "replied": 9
+          "messages": 72,
+          "replied": 10
         }
       },
       {
@@ -836,13 +884,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-11T05:09:33.370552"
+    "fetched_at": "2026-05-11T14:12:42.276746"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-11T05:09:38.486579"
+    "fetched_at": "2026-05-11T14:12:49.104595"
   },
-  "cached_at": "2026-05-11T05:09:38.486614"
+  "cached_at": "2026-05-11T14:12:49.104620"
 }
