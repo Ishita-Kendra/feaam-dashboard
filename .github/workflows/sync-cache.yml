@@ -34,21 +34,25 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Switch to (or create) the data-cache branch
-          git fetch origin data-cache 2>/dev/null && git checkout data-cache \
-            || git checkout --orphan data-cache
-
-          # Copy fresh data + static site files from master
-          git checkout master -- data/cache.json static/ templates/index.html
-
-          # Promote index.html to root with corrected asset paths
+          # Stash the generated files before switching branches
+          mkdir -p /tmp/site/data /tmp/site/static
+          cp data/cache.json /tmp/site/data/cache.json
+          cp -r static/. /tmp/site/static/
           sed 's|href="/static/|href="static/|g; s|src="/static/|src="static/|g' \
-            templates/index.html > index.html
+            templates/index.html > /tmp/site/index.html
 
-          # Remove the templates copy we just used as source
-          git rm -rf templates/ 2>/dev/null || true
+          # Switch to (or create) the data-cache branch
+          git fetch origin data-cache 2>/dev/null \
+            && git checkout data-cache \
+            || { git checkout --orphan data-cache; git rm -rf . --quiet 2>/dev/null || true; }
 
-          git add index.html static/ data/cache.json
+          # Restore files into the branch working tree
+          mkdir -p data static
+          cp /tmp/site/data/cache.json data/cache.json
+          cp -r /tmp/site/static/. static/
+          cp /tmp/site/index.html index.html
+
+          git add -f index.html static/ data/cache.json
           git diff --cached --quiet \
             || git commit -m "chore: update dashboard $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push origin data-cache
