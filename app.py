@@ -1,10 +1,19 @@
 from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
 import requests
-import os
+import os, json
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+CACHE_FILE = os.path.join(os.path.dirname(__file__), "data", "cache.json")
+
+def _load_cache():
+    try:
+        with open(CACHE_FILE) as f:
+            return json.load(f)
+    except Exception:
+        return None
 
 load_dotenv()
 
@@ -71,6 +80,9 @@ def smartlead():
     end   = request.args.get("end_date")
     if not start or not end:
         start, end = default_dates()
+        cache = _load_cache()
+        if cache and cache.get("smartlead", {}).get("ok"):
+            return jsonify(cache["smartlead"])
 
     try:
         all_camps = sl("/campaigns")
@@ -196,6 +208,9 @@ def smartlead():
 
 @app.route("/api/aimfox")
 def aimfox():
+    cache = _load_cache()
+    if cache and cache.get("aimfox", {}).get("ok"):
+        return jsonify(cache["aimfox"])
     try:
         ws = get_af_workspace()
         all_camps = af_ws("/campaigns").get("campaigns", [])

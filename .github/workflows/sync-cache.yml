@@ -1,0 +1,42 @@
+name: Fetch from Smartlead + AimFox into data/cache.json
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # every hour
+  workflow_dispatch:        # allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Fetch from Smartlead + AimFox into data/cache.json
+        env:
+          SMARTLEAD_API_KEY: ${{ secrets.SMARTLEAD_API_KEY }}
+          AIMFOX_API_KEY: ${{ secrets.AIMFOX_API_KEY }}
+          CLIENT_FILTER: FEAAM
+        run: python sync_cache.py
+
+      - name: Commit cache.json to data-cache branch
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin data-cache:data-cache 2>/dev/null || git checkout --orphan data-cache
+          git checkout data-cache -- 2>/dev/null || true
+          mkdir -p data
+          cp data/cache.json data/cache.json 2>/dev/null || true
+          git add data/cache.json
+          git diff --cached --quiet || git commit -m "chore: update cache $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push origin data-cache
