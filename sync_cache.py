@@ -4,7 +4,7 @@ Fetches Smartlead + Aimfox data and writes data/cache.json.
 Run by GitHub Actions on a schedule; the cached file is committed to the
 data-cache branch so the dashboard can serve it without live API calls.
 """
-import os, sys, json, requests
+import os, sys, json, time, requests
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor
 
@@ -28,7 +28,14 @@ if not AF_KEY:
 
 def sl(path, params=None):
     p = dict(params or {}); p["api_key"] = SL_KEY
-    r = requests.get(f"{SL_BASE}{path}", params=p, timeout=30)
+    for attempt in range(4):
+        r = requests.get(f"{SL_BASE}{path}", params=p, timeout=30)
+        if r.status_code == 429:
+            wait = 15 * (2 ** attempt)
+            print(f"  SL rate-limited, waiting {wait}s…")
+            time.sleep(wait)
+            continue
+        r.raise_for_status(); return r.json()
     r.raise_for_status(); return r.json()
 
 
