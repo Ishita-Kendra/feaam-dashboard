@@ -33,10 +33,22 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin data-cache:data-cache 2>/dev/null || git checkout --orphan data-cache
-          git checkout data-cache -- 2>/dev/null || true
-          mkdir -p data
-          cp data/cache.json data/cache.json 2>/dev/null || true
-          git add data/cache.json
-          git diff --cached --quiet || git commit -m "chore: update cache $(date -u '+%Y-%m-%d %H:%M UTC')"
+
+          # Switch to (or create) the data-cache branch
+          git fetch origin data-cache 2>/dev/null && git checkout data-cache \
+            || git checkout --orphan data-cache
+
+          # Copy fresh data + static site files from master
+          git checkout master -- data/cache.json static/ templates/index.html
+
+          # Promote index.html to root with corrected asset paths
+          sed 's|href="/static/|href="static/|g; s|src="/static/|src="static/|g' \
+            templates/index.html > index.html
+
+          # Remove the templates copy we just used as source
+          git rm -rf templates/ 2>/dev/null || true
+
+          git add index.html static/ data/cache.json
+          git diff --cached --quiet \
+            || git commit -m "chore: update dashboard $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push origin data-cache

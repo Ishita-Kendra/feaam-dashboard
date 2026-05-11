@@ -209,6 +209,80 @@ def fetch_aimfox():
             "fetched_at": datetime.now().isoformat()}
 
 
+def fetch_all_positives(sl_campaigns, af_campaigns):
+    """Fetch positive/replied lead lists for all campaigns (no message threads)."""
+    sl_leads, af_leads = [], []
+
+    def fetch_sl_positives(c):
+        cid = c["id"]; cname = c.get("name", f"Campaign {cid}")
+        found = []
+        offset, limit = 0, 100
+        while True:
+            try:
+                p = {"offset": offset, "limit": limit, "api_key": SL_KEY}
+                r = requests.get(f"{SL_BASE}/campaigns/{cid}/leads", params=p, timeout=20)
+                if not r.ok: break
+                raw  = r.json()
+                page = raw if isinstance(raw, list) \
+                       else raw.get("list", raw.get("data", raw.get("leads", [])))
+                for lead in page:
+                    cat = (lead.get("lead_category") or lead.get("category") or
+                           lead.get("status") or lead.get("campaign_status") or "").lower()
+                    if "interest" not in cat:
+                        continue
+                    first = lead.get("first_name", "")
+                    last  = lead.get("last_name",  "")
+                    email = lead.get("email", "")
+                    found.append({
+                        "name": f"{first} {last}".strip() or email,
+                        "email": email,
+                        "campaign": cname,
+                        "campaign_id": cid,
+                    })
+                if len(page) < limit: break
+                offset += limit
+            except Exception:
+                break
+        return found
+
+    def fetch_af_replied(c):
+        cid = c["id"]; cname = c.get("name", f"Campaign {cid}")
+        found = []
+        try:
+            raw      = af_ws(f"/campaigns/{cid}/audience", {"limit": 500})
+            audience = raw.get("audience", raw if isinstance(raw, list) else [])
+            for a in audience:
+                if (a.get("state") or "").lower() != "reply": continue
+                profile = a.get("profile") or a
+                first   = profile.get("first_name", a.get("first_name", ""))
+                last    = profile.get("last_name",  a.get("last_name",  ""))
+                name    = f"{first} {last}".strip() or profile.get("name", "")
+                lid     = a.get("id") or a.get("profile_id")
+                found.append({
+                    "name": name or f"Lead {lid}",
+                    "id": lid,
+                    "campaign": cname,
+                    "campaign_id": cid,
+                })
+        except Exception:
+            pass
+        return found
+
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        for batch in ex.map(fetch_sl_positives, sl_campaigns):
+            sl_leads.extend(batch)
+
+    af_target_ids = set(AF_ACCOUNTS.keys())
+    af_feaam = [c for c in af_campaigns
+                if any(str(o) in af_target_ids for o in c.get("owners", []))]
+    with ThreadPoolExecutor(max_workers=5) as ex:
+        for batch in ex.map(fetch_af_replied, af_feaam):
+            af_leads.extend(batch)
+
+    return {"ok": True, "smartlead": sl_leads, "aimfox": af_leads,
+            "fetched_at": datetime.now().isoformat()}
+
+
 if __name__ == "__main__":
     print(f"{datetime.now()} - Fetching Smartlead...")
     sl_data = fetch_smartlead()
@@ -218,10 +292,21 @@ if __name__ == "__main__":
     af_data = fetch_aimfox()
     print(f"  {len(af_data['campaigns'])} campaigns")
 
+    print(f"{datetime.now()} - Fetching positive/replied leads...")
+    # Collect all FEAAM campaigns (main + subs) for positives sweep
+    all_sl = []
+    for c in sl_data["campaigns"]:
+        all_sl.append(c)
+        all_sl.extend(c.get("subsequences", []))
+    pos_data = fetch_all_positives(all_sl, af_data["campaigns"])
+    sl_pos = len(pos_data["smartlead"]); af_pos = len(pos_data["aimfox"])
+    print(f"  {sl_pos} SL positive, {af_pos} AF replied")
+
     cache = {
-        "smartlead": sl_data,
-        "aimfox":    af_data,
-        "cached_at": datetime.now().isoformat(),
+        "smartlead":    sl_data,
+        "aimfox":       af_data,
+        "all_positives": pos_data,
+        "cached_at":    datetime.now().isoformat(),
     }
     os.makedirs("data", exist_ok=True)
     with open("data/cache.json", "w") as f:

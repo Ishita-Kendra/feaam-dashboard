@@ -48,12 +48,53 @@ function dates() {
 }
 
 /* ── Fetch ────────────────────────────────────────────────────────────────── */
+
+// Try cache.json first (GitHub Pages static mode), fall back to live API
+const CACHE_URL = (() => {
+  // When served from GitHub Pages the page is at /feaam-dashboard/
+  // When served locally from Flask it's at /
+  const base = document.currentScript
+    ? new URL(document.currentScript.src).pathname.replace(/\/static\/app\.js$/, '')
+    : '';
+  return base + '/data/cache.json';
+})();
+
 async function fetchAll() {
   setSpinning(true);
   clearError();
+  const errors = [];
+
+  // ── Try reading the pre-built cache (static / GitHub Pages mode) ──────────
+  try {
+    const cache = await fetch(CACHE_URL + '?_=' + Date.now()).then(r => {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    });
+
+    if (cache.smartlead?.ok) { slData = cache.smartlead; renderSL(); }
+    else errors.push('Smartlead: no cache data');
+
+    if (cache.aimfox?.ok) { afData = cache.aimfox; renderAF(); }
+    else errors.push('Aimfox: no cache data');
+
+    if (cache.all_positives?.ok) {
+      allPositivesData = cache.all_positives;
+      renderAllPositives();
+    }
+
+    const ts = cache.cached_at
+      ? new Date(cache.cached_at).toLocaleTimeString()
+      : new Date().toLocaleTimeString();
+    document.getElementById('lastFetch').textContent = 'Data as of: ' + ts;
+    if (errors.length) showError(errors.join(' | '));
+    setSpinning(false);
+    startCountdown();
+    return;
+  } catch (_) { /* cache not available — fall through to live API */ }
+
+  // ── Live API fallback (Flask / local dev mode) ────────────────────────────
   const d = dates();
   const qs = `start_date=${d.start_date}&end_date=${d.end_date}`;
-  const errors = [];
 
   const [slRes, afRes] = await Promise.allSettled([
     fetch(`/api/smartlead?${qs}`).then(r => r.json()),
@@ -61,15 +102,13 @@ async function fetchAll() {
   ]);
 
   if (slRes.status === 'fulfilled' && slRes.value.ok) {
-    slData = slRes.value;
-    renderSL();
+    slData = slRes.value; renderSL();
   } else {
     errors.push('Smartlead: ' + (slRes.reason?.message || slRes.value?.error || 'error'));
   }
 
   if (afRes.status === 'fulfilled' && afRes.value.ok) {
-    afData = afRes.value;
-    renderAF();
+    afData = afRes.value; renderAF();
   } else {
     errors.push('Aimfox: ' + (afRes.reason?.message || afRes.value?.error || 'error'));
   }
@@ -77,11 +116,8 @@ async function fetchAll() {
   if (errors.length) showError(errors.join(' | '));
   document.getElementById('lastFetch').textContent =
     'Last fetch: ' + new Date().toLocaleTimeString();
-
   setSpinning(false);
   startCountdown();
-
-  // Fetch all positives independently (slower, doesn't block the main view)
   fetchAllPositives();
 }
 
