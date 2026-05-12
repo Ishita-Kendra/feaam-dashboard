@@ -34,18 +34,18 @@
             "parent_id": 3315039,
             "client_name": "Ebru Avci",
             "is_sub": true,
-            "progress": 0.0,
+            "progress": 37.5,
             "total_leads": 16,
-            "sent": 0,
-            "unique_sent": 0,
-            "opened": 0,
-            "unique_opened": 0,
+            "sent": 6,
+            "unique_sent": 6,
+            "opened": 6,
+            "unique_opened": 6,
             "replied": 0,
             "positive": 0,
             "bounced": 0,
-            "clicked": 0,
-            "open_pct": 0,
-            "reply_pct": 0,
+            "clicked": 6,
+            "open_pct": 100.0,
+            "reply_pct": 0.0,
             "positive_pct": 0
           }
         ]
@@ -134,13 +134,13 @@
             "total_leads": 92,
             "sent": 47,
             "unique_sent": 47,
-            "opened": 40,
-            "unique_opened": 40,
+            "opened": 41,
+            "unique_opened": 41,
             "replied": 0,
             "positive": 0,
             "bounced": 0,
-            "clicked": 24,
-            "open_pct": 85.1,
+            "clicked": 25,
+            "open_pct": 87.2,
             "reply_pct": 0.0,
             "positive_pct": 0
           }
@@ -653,7 +653,7 @@
       "positive": 14,
       "bounced": 15
     },
-    "fetched_at": "2026-05-12T00:14:44.312183"
+    "fetched_at": "2026-05-12T10:18:40.145130"
   },
   "aimfox": {
     "ok": true,
@@ -670,16 +670,16 @@
           "Ebru AVCI"
         ],
         "target_count": 124,
-        "sent": 50,
+        "sent": 57,
         "accepted": 3,
         "messages": 2,
         "replied": 0,
-        "accept_pct": 6.0,
+        "accept_pct": 5.3,
         "reply_pct": 0.0,
         "owner_stats": {
           "439119116": {
             "sent": 121,
-            "accepted": 2
+            "accepted": 1
           },
           "1723192451": {
             "sent": 0,
@@ -867,7 +867,7 @@
         "id": "439119116",
         "name": "Ebru AVCI",
         "totals": {
-          "sent": 198,
+          "sent": 205,
           "accepted": 36,
           "messages": 72,
           "replied": 10
@@ -884,13 +884,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-12T00:14:48.959503"
+    "fetched_at": "2026-05-12T10:18:44.255219"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-12T00:14:53.137998"
+    "fetched_at": "2026-05-12T10:18:48.605979"
   },
-  "cached_at": "2026-05-12T00:14:53.138043"
+  "cached_at": "2026-05-12T10:18:48.606026"
 }
