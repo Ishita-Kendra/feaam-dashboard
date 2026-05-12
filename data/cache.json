@@ -35,7 +35,7 @@
             "client_name": "Ebru Avci",
             "is_sub": true,
             "progress": 0.0,
-            "total_leads": 7,
+            "total_leads": 16,
             "sent": 0,
             "unique_sent": 0,
             "opened": 0,
@@ -470,7 +470,7 @@
         "total_leads": 111,
         "sent": 0,
         "unique_sent": 0,
-        "opened": 6,
+        "opened": 1,
         "unique_opened": 0,
         "replied": 0,
         "positive": 0,
@@ -546,7 +546,7 @@
             "replied": 1,
             "positive": 3,
             "bounced": 0,
-            "clicked": 2,
+            "clicked": 1,
             "open_pct": 0,
             "reply_pct": 0,
             "positive_pct": 300.0
@@ -566,7 +566,7 @@
         "total_leads": 110,
         "sent": 87,
         "unique_sent": 0,
-        "opened": 53,
+        "opened": 52,
         "unique_opened": 1,
         "replied": 0,
         "positive": 0,
@@ -648,12 +648,12 @@
     ],
     "totals": {
       "sent": 1813,
-      "opened": 673,
+      "opened": 667,
       "replied": 11,
       "positive": 14,
       "bounced": 15
     },
-    "fetched_at": "2026-05-11T20:56:34.634760"
+    "fetched_at": "2026-05-12T00:14:44.312183"
   },
   "aimfox": {
     "ok": true,
@@ -815,15 +815,15 @@
           "Ebru AVCI"
         ],
         "target_count": 119,
-        "sent": 117,
+        "sent": 119,
         "accepted": 26,
         "messages": 63,
         "replied": 7,
-        "accept_pct": 22.2,
-        "reply_pct": 6.0,
+        "accept_pct": 21.8,
+        "reply_pct": 5.9,
         "owner_stats": {
           "439119116": {
-            "sent": 33,
+            "sent": 31,
             "accepted": 1
           },
           "1723192451": {
@@ -867,7 +867,7 @@
         "id": "439119116",
         "name": "Ebru AVCI",
         "totals": {
-          "sent": 196,
+          "sent": 198,
           "accepted": 36,
           "messages": 72,
           "replied": 10
@@ -884,13 +884,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-11T20:56:39.588782"
+    "fetched_at": "2026-05-12T00:14:48.959503"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-11T20:56:43.606499"
+    "fetched_at": "2026-05-12T00:14:53.137998"
   },
-  "cached_at": "2026-05-11T20:56:43.606542"
+  "cached_at": "2026-05-12T00:14:53.138043"
 }
