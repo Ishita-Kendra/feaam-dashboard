@@ -28,14 +28,14 @@
           {
             "id": 3323368,
             "name": "FEAAM_INT_MIX_12-05-26_Open",
-            "status": "DRAFTED",
+            "status": "PAUSED",
             "created_at": "2026-05-12T12:49:17.696Z",
             "sequence_count": 1,
             "parent_id": 3323359,
             "client_name": "Ebru Avci",
             "is_sub": true,
-            "progress": 0,
-            "total_leads": 0,
+            "progress": 0.0,
+            "total_leads": 24,
             "sent": 0,
             "unique_sent": 0,
             "opened": 0,
@@ -701,7 +701,7 @@
       "positive": 14,
       "bounced": 15
     },
-    "fetched_at": "2026-05-13T17:37:33.626182"
+    "fetched_at": "2026-05-13T22:44:45.743296"
   },
   "aimfox": {
     "ok": true,
@@ -725,13 +725,13 @@
         "accept_pct": 6.2,
         "reply_pct": 0.0,
         "owner_stats": {
-          "1723192451": {
-            "sent": 0,
-            "accepted": 0
-          },
           "439119116": {
             "sent": 120,
             "accepted": 4
+          },
+          "1723192451": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -754,13 +754,13 @@
         "accept_pct": 28.6,
         "reply_pct": 3.6,
         "owner_stats": {
-          "1723192451": {
-            "sent": 74,
-            "accepted": 4
-          },
           "439119116": {
             "sent": 0,
             "accepted": 0
+          },
+          "1723192451": {
+            "sent": 74,
+            "accepted": 4
           }
         }
       },
@@ -783,13 +783,13 @@
         "accept_pct": 10.0,
         "reply_pct": 5.0,
         "owner_stats": {
-          "1723192451": {
-            "sent": 28,
-            "accepted": 2
-          },
           "439119116": {
             "sent": 0,
             "accepted": 0
+          },
+          "1723192451": {
+            "sent": 28,
+            "accepted": 2
           }
         }
       },
@@ -812,13 +812,13 @@
         "accept_pct": 14.3,
         "reply_pct": 4.8,
         "owner_stats": {
-          "1723192451": {
-            "sent": 54,
-            "accepted": 2
-          },
           "439119116": {
             "sent": 0,
             "accepted": 0
+          },
+          "1723192451": {
+            "sent": 54,
+            "accepted": 2
           }
         }
       },
@@ -841,13 +841,13 @@
         "accept_pct": 11.4,
         "reply_pct": 2.9,
         "owner_stats": {
-          "1723192451": {
-            "sent": 94,
-            "accepted": 1
-          },
           "439119116": {
             "sent": 0,
             "accepted": 0
+          },
+          "1723192451": {
+            "sent": 94,
+            "accepted": 1
           }
         }
       },
@@ -870,13 +870,13 @@
         "accept_pct": 22.7,
         "reply_pct": 6.7,
         "owner_stats": {
-          "1723192451": {
-            "sent": 0,
-            "accepted": 0
-          },
           "439119116": {
             "sent": 30,
             "accepted": 1
+          },
+          "1723192451": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -899,11 +899,11 @@
         "accept_pct": 24.1,
         "reply_pct": 10.3,
         "owner_stats": {
-          "1723192451": {
+          "439119116": {
             "sent": 0,
             "accepted": 0
           },
-          "439119116": {
+          "1723192451": {
             "sent": 0,
             "accepted": 0
           }
@@ -932,13 +932,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-13T17:37:38.588986"
+    "fetched_at": "2026-05-13T22:44:50.710921"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-13T17:37:46.013784"
+    "fetched_at": "2026-05-13T22:44:57.160161"
   },
-  "cached_at": "2026-05-13T17:37:46.013824"
+  "cached_at": "2026-05-13T22:44:57.160193"
 }
