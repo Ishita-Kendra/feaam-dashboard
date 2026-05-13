@@ -53,15 +53,15 @@
       {
         "id": 3315039,
         "name": "FEAAM_INT_USA_11-05-26",
-        "status": "ACTIVE",
+        "status": "COMPLETED",
         "created_at": "2026-05-11T07:18:57.491Z",
         "sequence_count": 2,
         "parent_id": null,
         "client_name": "Ebru Avci",
         "is_sub": false,
-        "progress": 9.2,
+        "progress": 100.0,
         "total_leads": 87,
-        "sent": 87,
+        "sent": 166,
         "unique_sent": 87,
         "opened": 8,
         "unique_opened": 8,
@@ -82,16 +82,16 @@
             "parent_id": 3315039,
             "client_name": "Ebru Avci",
             "is_sub": true,
-            "progress": 37.5,
+            "progress": 50.0,
             "total_leads": 16,
-            "sent": 6,
-            "unique_sent": 6,
-            "opened": 6,
-            "unique_opened": 6,
+            "sent": 8,
+            "unique_sent": 8,
+            "opened": 8,
+            "unique_opened": 8,
             "replied": 0,
             "positive": 0,
             "bounced": 0,
-            "clicked": 6,
+            "clicked": 8,
             "open_pct": 100.0,
             "reply_pct": 0.0,
             "positive_pct": 0
@@ -695,13 +695,13 @@
       }
     ],
     "totals": {
-      "sent": 1564,
+      "sent": 1643,
       "opened": 576,
       "replied": 9,
       "positive": 14,
       "bounced": 15
     },
-    "fetched_at": "2026-05-13T09:32:48.719141"
+    "fetched_at": "2026-05-13T17:37:33.626182"
   },
   "aimfox": {
     "ok": true,
@@ -718,20 +718,20 @@
           "Ebru AVCI"
         ],
         "target_count": 124,
-        "sent": 69,
+        "sent": 80,
         "accepted": 5,
         "messages": 2,
         "replied": 0,
-        "accept_pct": 7.2,
+        "accept_pct": 6.2,
         "reply_pct": 0.0,
         "owner_stats": {
-          "439119116": {
-            "sent": 121,
-            "accepted": 5
-          },
           "1723192451": {
             "sent": 0,
             "accepted": 0
+          },
+          "439119116": {
+            "sent": 120,
+            "accepted": 4
           }
         }
       },
@@ -754,13 +754,13 @@
         "accept_pct": 28.6,
         "reply_pct": 3.6,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 74,
             "accepted": 4
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -783,13 +783,13 @@
         "accept_pct": 10.0,
         "reply_pct": 5.0,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 28,
             "accepted": 2
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -812,13 +812,13 @@
         "accept_pct": 14.3,
         "reply_pct": 4.8,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 54,
             "accepted": 2
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -841,13 +841,13 @@
         "accept_pct": 11.4,
         "reply_pct": 2.9,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 94,
             "accepted": 1
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -864,19 +864,19 @@
         ],
         "target_count": 119,
         "sent": 119,
-        "accepted": 26,
-        "messages": 63,
+        "accepted": 27,
+        "messages": 64,
         "replied": 8,
-        "accept_pct": 21.8,
+        "accept_pct": 22.7,
         "reply_pct": 6.7,
         "owner_stats": {
-          "439119116": {
-            "sent": 31,
-            "accepted": 1
-          },
           "1723192451": {
             "sent": 0,
             "accepted": 0
+          },
+          "439119116": {
+            "sent": 30,
+            "accepted": 1
           }
         }
       },
@@ -899,11 +899,11 @@
         "accept_pct": 24.1,
         "reply_pct": 10.3,
         "owner_stats": {
-          "439119116": {
+          "1723192451": {
             "sent": 0,
             "accepted": 0
           },
-          "1723192451": {
+          "439119116": {
             "sent": 0,
             "accepted": 0
           }
@@ -915,9 +915,9 @@
         "id": "439119116",
         "name": "Ebru AVCI",
         "totals": {
-          "sent": 217,
-          "accepted": 38,
-          "messages": 72,
+          "sent": 228,
+          "accepted": 39,
+          "messages": 73,
           "replied": 11
         }
       },
@@ -932,13 +932,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-13T09:32:53.008499"
+    "fetched_at": "2026-05-13T17:37:38.588986"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-13T09:32:57.894693"
+    "fetched_at": "2026-05-13T17:37:46.013784"
   },
-  "cached_at": "2026-05-13T09:32:57.894742"
+  "cached_at": "2026-05-13T17:37:46.013824"
 }
