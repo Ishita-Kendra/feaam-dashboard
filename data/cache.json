@@ -701,7 +701,7 @@
       "positive": 14,
       "bounced": 13
     },
-    "fetched_at": "2026-05-15T08:33:44.347463"
+    "fetched_at": "2026-05-15T16:17:41.519556"
   },
   "aimfox": {
     "ok": true,
@@ -718,20 +718,20 @@
           "Ebru AVCI"
         ],
         "target_count": 124,
-        "sent": 100,
-        "accepted": 10,
-        "messages": 4,
+        "sent": 114,
+        "accepted": 12,
+        "messages": 8,
         "replied": 1,
-        "accept_pct": 10.0,
-        "reply_pct": 1.0,
+        "accept_pct": 10.5,
+        "reply_pct": 0.9,
         "owner_stats": {
-          "439119116": {
-            "sent": 117,
-            "accepted": 7
-          },
           "1723192451": {
             "sent": 0,
             "accepted": 0
+          },
+          "439119116": {
+            "sent": 114,
+            "accepted": 5
           }
         }
       },
@@ -754,13 +754,13 @@
         "accept_pct": 28.6,
         "reply_pct": 3.6,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 74,
             "accepted": 4
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -783,13 +783,13 @@
         "accept_pct": 10.0,
         "reply_pct": 5.0,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 28,
             "accepted": 2
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -812,13 +812,13 @@
         "accept_pct": 14.3,
         "reply_pct": 4.8,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 54,
             "accepted": 2
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -841,13 +841,13 @@
         "accept_pct": 11.4,
         "reply_pct": 5.7,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 94,
             "accepted": 1
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -865,18 +865,18 @@
         "target_count": 119,
         "sent": 119,
         "accepted": 27,
-        "messages": 65,
+        "messages": 66,
         "replied": 8,
         "accept_pct": 22.7,
         "reply_pct": 6.7,
         "owner_stats": {
-          "439119116": {
-            "sent": 30,
-            "accepted": 1
-          },
           "1723192451": {
             "sent": 0,
             "accepted": 0
+          },
+          "439119116": {
+            "sent": 30,
+            "accepted": 1
           }
         }
       },
@@ -899,11 +899,11 @@
         "accept_pct": 24.1,
         "reply_pct": 10.3,
         "owner_stats": {
-          "439119116": {
+          "1723192451": {
             "sent": 0,
             "accepted": 0
           },
-          "1723192451": {
+          "439119116": {
             "sent": 0,
             "accepted": 0
           }
@@ -915,9 +915,9 @@
         "id": "439119116",
         "name": "Ebru AVCI",
         "totals": {
-          "sent": 248,
-          "accepted": 44,
-          "messages": 76,
+          "sent": 262,
+          "accepted": 46,
+          "messages": 81,
           "replied": 12
         }
       },
@@ -932,13 +932,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-15T08:33:49.648143"
+    "fetched_at": "2026-05-15T16:17:47.528973"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-15T08:33:56.146366"
+    "fetched_at": "2026-05-15T16:17:53.634484"
   },
-  "cached_at": "2026-05-15T08:33:56.146412"
+  "cached_at": "2026-05-15T16:17:53.634540"
 }
