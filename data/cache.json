@@ -28,7 +28,7 @@
           {
             "id": 3323368,
             "name": "FEAAM_INT_MIX_12-05-26_Open",
-            "status": "ACTIVE",
+            "status": "PAUSED",
             "created_at": "2026-05-12T12:49:17.696Z",
             "sequence_count": 1,
             "parent_id": 3323359,
@@ -399,8 +399,8 @@
         "total_leads": 86,
         "sent": 82,
         "unique_sent": 0,
-        "opened": 9,
-        "unique_opened": 2,
+        "opened": 8,
+        "unique_opened": 1,
         "replied": 1,
         "positive": 0,
         "bounced": 2,
@@ -445,17 +445,17 @@
         "is_sub": false,
         "progress": 58.0,
         "total_leads": 193,
-        "sent": 227,
+        "sent": 110,
         "unique_sent": 0,
-        "opened": 12,
-        "unique_opened": 2,
-        "replied": 1,
+        "opened": 4,
+        "unique_opened": 1,
+        "replied": 0,
         "positive": 2,
         "bounced": 3,
         "clicked": 0,
         "open_pct": 0,
         "reply_pct": 0,
-        "positive_pct": 200.0,
+        "positive_pct": 0,
         "subsequences": [
           {
             "id": 3186330,
@@ -491,15 +491,15 @@
             "is_sub": true,
             "progress": 98.7,
             "total_leads": 77,
-            "sent": 11,
-            "unique_sent": 11,
-            "opened": 8,
-            "unique_opened": 8,
+            "sent": 9,
+            "unique_sent": 9,
+            "opened": 6,
+            "unique_opened": 6,
             "replied": 0,
             "positive": 0,
             "bounced": 0,
             "clicked": 1,
-            "open_pct": 72.7,
+            "open_pct": 66.7,
             "reply_pct": 0.0,
             "positive_pct": 0
           }
@@ -695,13 +695,13 @@
       }
     ],
     "totals": {
-      "sent": 1558,
-      "opened": 525,
-      "replied": 9,
+      "sent": 1441,
+      "opened": 516,
+      "replied": 8,
       "positive": 14,
       "bounced": 13
     },
-    "fetched_at": "2026-05-14T21:56:49.465425"
+    "fetched_at": "2026-05-15T08:33:44.347463"
   },
   "aimfox": {
     "ok": true,
@@ -718,16 +718,16 @@
           "Ebru AVCI"
         ],
         "target_count": 124,
-        "sent": 97,
-        "accepted": 9,
+        "sent": 100,
+        "accepted": 10,
         "messages": 4,
         "replied": 1,
-        "accept_pct": 9.3,
+        "accept_pct": 10.0,
         "reply_pct": 1.0,
         "owner_stats": {
           "439119116": {
-            "sent": 118,
-            "accepted": 6
+            "sent": 117,
+            "accepted": 7
           },
           "1723192451": {
             "sent": 0,
@@ -915,8 +915,8 @@
         "id": "439119116",
         "name": "Ebru AVCI",
         "totals": {
-          "sent": 245,
-          "accepted": 43,
+          "sent": 248,
+          "accepted": 44,
           "messages": 76,
           "replied": 12
         }
@@ -932,13 +932,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-14T21:56:54.984711"
+    "fetched_at": "2026-05-15T08:33:49.648143"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-14T21:56:58.549537"
+    "fetched_at": "2026-05-15T08:33:56.146366"
   },
-  "cached_at": "2026-05-14T21:56:58.549588"
+  "cached_at": "2026-05-15T08:33:56.146412"
 }
