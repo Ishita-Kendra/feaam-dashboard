@@ -701,7 +701,7 @@
       "positive": 14,
       "bounced": 8
     },
-    "fetched_at": "2026-05-17T08:35:21.726747"
+    "fetched_at": "2026-05-17T20:11:17.118592"
   },
   "aimfox": {
     "ok": true,
@@ -720,17 +720,17 @@
         "target_count": 124,
         "sent": 122,
         "accepted": 14,
-        "messages": 12,
+        "messages": 13,
         "replied": 4,
         "accept_pct": 11.5,
         "reply_pct": 3.3,
         "owner_stats": {
-          "439119116": {
-            "sent": 109,
-            "accepted": 1
-          },
           "1723192451": {
             "sent": 0,
+            "accepted": 0
+          },
+          "439119116": {
+            "sent": 108,
             "accepted": 0
           }
         }
@@ -754,13 +754,13 @@
         "accept_pct": 28.6,
         "reply_pct": 3.6,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 74,
             "accepted": 4
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -783,13 +783,13 @@
         "accept_pct": 10.0,
         "reply_pct": 5.0,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 28,
             "accepted": 2
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -812,13 +812,13 @@
         "accept_pct": 14.3,
         "reply_pct": 4.8,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 54,
             "accepted": 2
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -841,13 +841,13 @@
         "accept_pct": 11.4,
         "reply_pct": 5.7,
         "owner_stats": {
-          "439119116": {
-            "sent": 0,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 94,
             "accepted": 1
+          },
+          "439119116": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -865,17 +865,17 @@
         "target_count": 119,
         "sent": 119,
         "accepted": 27,
-        "messages": 66,
+        "messages": 67,
         "replied": 8,
         "accept_pct": 22.7,
         "reply_pct": 6.7,
         "owner_stats": {
-          "439119116": {
-            "sent": 30,
-            "accepted": 1
-          },
           "1723192451": {
             "sent": 0,
+            "accepted": 0
+          },
+          "439119116": {
+            "sent": 29,
             "accepted": 0
           }
         }
@@ -899,11 +899,11 @@
         "accept_pct": 24.1,
         "reply_pct": 10.3,
         "owner_stats": {
-          "439119116": {
+          "1723192451": {
             "sent": 0,
             "accepted": 0
           },
-          "1723192451": {
+          "439119116": {
             "sent": 0,
             "accepted": 0
           }
@@ -917,7 +917,7 @@
         "totals": {
           "sent": 270,
           "accepted": 48,
-          "messages": 85,
+          "messages": 87,
           "replied": 15
         }
       },
@@ -932,13 +932,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-17T08:35:26.827237"
+    "fetched_at": "2026-05-17T20:11:21.490153"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-17T08:35:32.450235"
+    "fetched_at": "2026-05-17T20:11:24.800354"
   },
-  "cached_at": "2026-05-17T08:35:32.450271"
+  "cached_at": "2026-05-17T20:11:24.800412"
 }
