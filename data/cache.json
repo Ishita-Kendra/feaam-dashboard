@@ -397,17 +397,17 @@
         "is_sub": false,
         "progress": 96.5,
         "total_leads": 86,
-        "sent": 39,
+        "sent": 0,
         "unique_sent": 0,
-        "opened": 6,
+        "opened": 5,
         "unique_opened": 1,
-        "replied": 1,
+        "replied": 0,
         "positive": 0,
         "bounced": 0,
         "clicked": 0,
         "open_pct": 0,
         "reply_pct": 0,
-        "positive_pct": 0.0,
+        "positive_pct": 0,
         "subsequences": [
           {
             "id": 3176173,
@@ -695,13 +695,13 @@
       }
     ],
     "totals": {
-      "sent": 1289,
-      "opened": 512,
-      "replied": 8,
+      "sent": 1250,
+      "opened": 511,
+      "replied": 7,
       "positive": 14,
       "bounced": 8
     },
-    "fetched_at": "2026-05-17T20:11:17.118592"
+    "fetched_at": "2026-05-18T00:13:36.520078"
   },
   "aimfox": {
     "ok": true,
@@ -932,13 +932,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-17T20:11:21.490153"
+    "fetched_at": "2026-05-18T00:13:41.042590"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-17T20:11:24.800354"
+    "fetched_at": "2026-05-18T00:13:45.483755"
   },
-  "cached_at": "2026-05-17T20:11:24.800412"
+  "cached_at": "2026-05-18T00:13:45.483806"
 }
