@@ -3,6 +3,54 @@
     "ok": true,
     "campaigns": [
       {
+        "id": 3348988,
+        "name": "FEAAM_18-05",
+        "status": "COMPLETED",
+        "created_at": "2026-05-18T06:36:12.814Z",
+        "sequence_count": 3,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 100.0,
+        "total_leads": 29,
+        "sent": 29,
+        "unique_sent": 29,
+        "opened": 29,
+        "unique_opened": 29,
+        "replied": 0,
+        "positive": 0,
+        "bounced": 0,
+        "clicked": 0,
+        "open_pct": 100.0,
+        "reply_pct": 0.0,
+        "positive_pct": 0,
+        "subsequences": [
+          {
+            "id": 3348994,
+            "name": "FEAAM_18-05_Open",
+            "status": "ACTIVE",
+            "created_at": "2026-05-18T06:40:15.550Z",
+            "sequence_count": 1,
+            "parent_id": 3348988,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 0.0,
+            "total_leads": 10,
+            "sent": 0,
+            "unique_sent": 0,
+            "opened": 0,
+            "unique_opened": 0,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 0,
+            "open_pct": 0,
+            "reply_pct": 0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
         "id": 3323359,
         "name": "FEAAM_INT_MIX_12-05-26",
         "status": "COMPLETED",
@@ -695,13 +743,13 @@
       }
     ],
     "totals": {
-      "sent": 1250,
-      "opened": 511,
+      "sent": 1279,
+      "opened": 540,
       "replied": 7,
       "positive": 14,
       "bounced": 8
     },
-    "fetched_at": "2026-05-18T00:13:36.520078"
+    "fetched_at": "2026-05-18T12:57:33.754907"
   },
   "aimfox": {
     "ok": true,
@@ -719,10 +767,10 @@
         ],
         "target_count": 124,
         "sent": 122,
-        "accepted": 14,
+        "accepted": 15,
         "messages": 13,
         "replied": 4,
-        "accept_pct": 11.5,
+        "accept_pct": 12.3,
         "reply_pct": 3.3,
         "owner_stats": {
           "1723192451": {
@@ -731,7 +779,7 @@
           },
           "439119116": {
             "sent": 108,
-            "accepted": 0
+            "accepted": 1
           }
         }
       },
@@ -748,15 +796,15 @@
         ],
         "target_count": 218,
         "sent": 28,
-        "accepted": 8,
+        "accepted": 9,
         "messages": 12,
         "replied": 1,
-        "accept_pct": 28.6,
+        "accept_pct": 32.1,
         "reply_pct": 3.6,
         "owner_stats": {
           "1723192451": {
             "sent": 74,
-            "accepted": 4
+            "accepted": 5
           },
           "439119116": {
             "sent": 0,
@@ -777,15 +825,15 @@
         ],
         "target_count": 30,
         "sent": 20,
-        "accepted": 2,
+        "accepted": 3,
         "messages": 1,
         "replied": 1,
-        "accept_pct": 10.0,
+        "accept_pct": 15.0,
         "reply_pct": 5.0,
         "owner_stats": {
           "1723192451": {
             "sent": 28,
-            "accepted": 2
+            "accepted": 3
           },
           "439119116": {
             "sent": 0,
@@ -916,7 +964,7 @@
         "name": "Ebru AVCI",
         "totals": {
           "sent": 270,
-          "accepted": 48,
+          "accepted": 49,
           "messages": 87,
           "replied": 15
         }
@@ -926,19 +974,19 @@
         "name": "Dr. Gerling",
         "totals": {
           "sent": 104,
-          "accepted": 17,
+          "accepted": 19,
           "messages": 25,
           "replied": 5
         }
       }
     ],
-    "fetched_at": "2026-05-18T00:13:41.042590"
+    "fetched_at": "2026-05-18T12:57:38.206548"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-18T00:13:45.483755"
+    "fetched_at": "2026-05-18T12:57:42.925972"
   },
-  "cached_at": "2026-05-18T00:13:45.483806"
+  "cached_at": "2026-05-18T12:57:42.926017"
 }
