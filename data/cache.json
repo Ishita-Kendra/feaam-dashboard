@@ -3,6 +3,54 @@
     "ok": true,
     "campaigns": [
       {
+        "id": 3355017,
+        "name": "FEAAM_19-05-26",
+        "status": "ACTIVE",
+        "created_at": "2026-05-19T07:53:24.075Z",
+        "sequence_count": 3,
+        "parent_id": null,
+        "client_name": "Ebru Avci",
+        "is_sub": false,
+        "progress": 54.0,
+        "total_leads": 100,
+        "sent": 80,
+        "unique_sent": 80,
+        "opened": 54,
+        "unique_opened": 54,
+        "replied": 3,
+        "positive": 1,
+        "bounced": 3,
+        "clicked": 0,
+        "open_pct": 67.5,
+        "reply_pct": 3.8,
+        "positive_pct": 33.3,
+        "subsequences": [
+          {
+            "id": 3355027,
+            "name": "FEAAM_19-05_Open",
+            "status": "COMPLETED",
+            "created_at": "2026-05-19T07:56:19.017Z",
+            "sequence_count": 1,
+            "parent_id": 3355017,
+            "client_name": "Ebru Avci",
+            "is_sub": true,
+            "progress": 0,
+            "total_leads": 0,
+            "sent": 0,
+            "unique_sent": 0,
+            "opened": 0,
+            "unique_opened": 0,
+            "replied": 0,
+            "positive": 0,
+            "bounced": 0,
+            "clicked": 0,
+            "open_pct": 0,
+            "reply_pct": 0,
+            "positive_pct": 0
+          }
+        ]
+      },
+      {
         "id": 3348988,
         "name": "FEAAM_18-05",
         "status": "COMPLETED",
@@ -35,7 +83,7 @@
             "client_name": "Ebru Avci",
             "is_sub": true,
             "progress": 0.0,
-            "total_leads": 10,
+            "total_leads": 29,
             "sent": 0,
             "unique_sent": 0,
             "opened": 0,
@@ -64,12 +112,12 @@
         "sent": 26,
         "unique_sent": 25,
         "opened": 25,
-        "unique_opened": 24,
+        "unique_opened": 25,
         "replied": 0,
         "positive": 0,
         "bounced": 0,
         "clicked": 0,
-        "open_pct": 96.0,
+        "open_pct": 100.0,
         "reply_pct": 0.0,
         "positive_pct": 0,
         "subsequences": [
@@ -208,12 +256,12 @@
         "sent": 153,
         "unique_sent": 82,
         "opened": 49,
-        "unique_opened": 45,
+        "unique_opened": 48,
         "replied": 2,
         "positive": 0,
         "bounced": 1,
         "clicked": 0,
-        "open_pct": 54.9,
+        "open_pct": 58.5,
         "reply_pct": 2.4,
         "positive_pct": 0.0,
         "subsequences": [
@@ -256,12 +304,12 @@
         "sent": 140,
         "unique_sent": 100,
         "opened": 65,
-        "unique_opened": 58,
+        "unique_opened": 64,
         "replied": 2,
         "positive": 0,
         "bounced": 3,
         "clicked": 0,
-        "open_pct": 58.0,
+        "open_pct": 64.0,
         "reply_pct": 2.0,
         "positive_pct": 0.0,
         "subsequences": [
@@ -304,12 +352,12 @@
         "sent": 164,
         "unique_sent": 100,
         "opened": 71,
-        "unique_opened": 65,
+        "unique_opened": 71,
         "replied": 1,
         "positive": 0,
         "bounced": 1,
         "clicked": 0,
-        "open_pct": 65.0,
+        "open_pct": 71.0,
         "reply_pct": 1.0,
         "positive_pct": 0.0,
         "subsequences": [
@@ -352,12 +400,12 @@
         "sent": 252,
         "unique_sent": 184,
         "opened": 117,
-        "unique_opened": 116,
+        "unique_opened": 117,
         "replied": 0,
         "positive": 0,
         "bounced": 0,
         "clicked": 0,
-        "open_pct": 63.0,
+        "open_pct": 63.6,
         "reply_pct": 0.0,
         "positive_pct": 0,
         "subsequences": [
@@ -400,12 +448,12 @@
         "sent": 269,
         "unique_sent": 189,
         "opened": 110,
-        "unique_opened": 108,
+        "unique_opened": 110,
         "replied": 0,
         "positive": 0,
         "bounced": 1,
         "clicked": 0,
-        "open_pct": 57.1,
+        "open_pct": 58.2,
         "reply_pct": 0.0,
         "positive_pct": 0,
         "subsequences": [
@@ -448,7 +496,7 @@
         "sent": 0,
         "unique_sent": 0,
         "opened": 5,
-        "unique_opened": 1,
+        "unique_opened": 2,
         "replied": 0,
         "positive": 0,
         "bounced": 0,
@@ -494,15 +542,15 @@
         "progress": 58.0,
         "total_leads": 193,
         "sent": 1,
-        "unique_sent": 0,
+        "unique_sent": 1,
         "opened": 2,
-        "unique_opened": 0,
+        "unique_opened": 2,
         "replied": 0,
         "positive": 2,
         "bounced": 0,
         "clicked": 0,
-        "open_pct": 0,
-        "reply_pct": 0,
+        "open_pct": 200.0,
+        "reply_pct": 0.0,
         "positive_pct": 0,
         "subsequences": [
           {
@@ -743,13 +791,13 @@
       }
     ],
     "totals": {
-      "sent": 1279,
-      "opened": 540,
-      "replied": 7,
-      "positive": 14,
-      "bounced": 8
+      "sent": 1359,
+      "opened": 594,
+      "replied": 10,
+      "positive": 15,
+      "bounced": 11
     },
-    "fetched_at": "2026-05-18T23:47:05.284305"
+    "fetched_at": "2026-05-19T11:45:05.913300"
   },
   "aimfox": {
     "ok": true,
@@ -768,7 +816,7 @@
         "target_count": 124,
         "sent": 122,
         "accepted": 16,
-        "messages": 13,
+        "messages": 14,
         "replied": 4,
         "accept_pct": 13.1,
         "reply_pct": 3.3,
@@ -778,8 +826,8 @@
             "accepted": 0
           },
           "439119116": {
-            "sent": 108,
-            "accepted": 2
+            "sent": 107,
+            "accepted": 1
           }
         }
       },
@@ -965,7 +1013,7 @@
         "totals": {
           "sent": 270,
           "accepted": 51,
-          "messages": 87,
+          "messages": 88,
           "replied": 15
         }
       },
@@ -980,13 +1028,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-18T23:47:09.766430"
+    "fetched_at": "2026-05-19T11:45:10.340455"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-18T23:47:14.067960"
+    "fetched_at": "2026-05-19T11:45:15.664252"
   },
-  "cached_at": "2026-05-18T23:47:14.067993"
+  "cached_at": "2026-05-19T11:45:15.664286"
 }
