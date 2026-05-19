@@ -11,18 +11,18 @@
         "parent_id": null,
         "client_name": "Ebru Avci",
         "is_sub": false,
-        "progress": 54.0,
+        "progress": 68.0,
         "total_leads": 100,
-        "sent": 80,
-        "unique_sent": 80,
-        "opened": 54,
-        "unique_opened": 54,
+        "sent": 100,
+        "unique_sent": 100,
+        "opened": 68,
+        "unique_opened": 68,
         "replied": 3,
         "positive": 1,
         "bounced": 3,
         "clicked": 0,
-        "open_pct": 67.5,
-        "reply_pct": 3.8,
+        "open_pct": 68.0,
+        "reply_pct": 3.0,
         "positive_pct": 33.3,
         "subsequences": [
           {
@@ -791,13 +791,13 @@
       }
     ],
     "totals": {
-      "sent": 1359,
-      "opened": 594,
+      "sent": 1379,
+      "opened": 608,
       "replied": 10,
       "positive": 15,
       "bounced": 11
     },
-    "fetched_at": "2026-05-19T11:45:05.913300"
+    "fetched_at": "2026-05-19T18:28:52.341929"
   },
   "aimfox": {
     "ok": true,
@@ -815,10 +815,10 @@
         ],
         "target_count": 124,
         "sent": 122,
-        "accepted": 16,
+        "accepted": 17,
         "messages": 14,
         "replied": 4,
-        "accept_pct": 13.1,
+        "accept_pct": 13.9,
         "reply_pct": 3.3,
         "owner_stats": {
           "1723192451": {
@@ -827,7 +827,7 @@
           },
           "439119116": {
             "sent": 107,
-            "accepted": 1
+            "accepted": 2
           }
         }
       },
@@ -961,7 +961,7 @@
         "target_count": 119,
         "sent": 119,
         "accepted": 28,
-        "messages": 67,
+        "messages": 68,
         "replied": 8,
         "accept_pct": 23.5,
         "reply_pct": 6.7,
@@ -1012,8 +1012,8 @@
         "name": "Ebru AVCI",
         "totals": {
           "sent": 270,
-          "accepted": 51,
-          "messages": 88,
+          "accepted": 52,
+          "messages": 89,
           "replied": 15
         }
       },
@@ -1028,13 +1028,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-19T11:45:10.340455"
+    "fetched_at": "2026-05-19T18:28:56.901017"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-19T11:45:15.664252"
+    "fetched_at": "2026-05-19T18:29:02.438857"
   },
-  "cached_at": "2026-05-19T11:45:15.664286"
+  "cached_at": "2026-05-19T18:29:02.438903"
 }
