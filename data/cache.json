@@ -617,7 +617,7 @@
         "opened": 0,
         "unique_opened": 0,
         "replied": 0,
-        "positive": 0,
+        "positive": 1,
         "bounced": 0,
         "clicked": 0,
         "open_pct": 0,
@@ -688,7 +688,7 @@
             "opened": 0,
             "unique_opened": 0,
             "replied": 0,
-            "positive": 3,
+            "positive": 4,
             "bounced": 0,
             "clicked": 1,
             "open_pct": 0,
@@ -794,10 +794,10 @@
       "sent": 1189,
       "opened": 501,
       "replied": 10,
-      "positive": 15,
+      "positive": 16,
       "bounced": 10
     },
-    "fetched_at": "2026-05-20T10:36:28.657478"
+    "fetched_at": "2026-05-20T19:36:23.231386"
   },
   "aimfox": {
     "ok": true,
@@ -817,17 +817,17 @@
         "sent": 122,
         "accepted": 17,
         "messages": 15,
-        "replied": 4,
+        "replied": 5,
         "accept_pct": 13.9,
-        "reply_pct": 3.3,
+        "reply_pct": 4.1,
         "owner_stats": {
-          "1723192451": {
-            "sent": 0,
-            "accepted": 0
-          },
           "439119116": {
             "sent": 106,
             "accepted": 1
+          },
+          "1723192451": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -850,13 +850,13 @@
         "accept_pct": 32.1,
         "reply_pct": 3.6,
         "owner_stats": {
-          "1723192451": {
-            "sent": 74,
-            "accepted": 5
-          },
           "439119116": {
             "sent": 0,
             "accepted": 0
+          },
+          "1723192451": {
+            "sent": 74,
+            "accepted": 5
           }
         }
       },
@@ -879,13 +879,13 @@
         "accept_pct": 15.0,
         "reply_pct": 5.0,
         "owner_stats": {
-          "1723192451": {
-            "sent": 28,
-            "accepted": 3
-          },
           "439119116": {
             "sent": 0,
             "accepted": 0
+          },
+          "1723192451": {
+            "sent": 28,
+            "accepted": 3
           }
         }
       },
@@ -908,13 +908,13 @@
         "accept_pct": 14.3,
         "reply_pct": 4.8,
         "owner_stats": {
-          "1723192451": {
-            "sent": 54,
-            "accepted": 2
-          },
           "439119116": {
             "sent": 0,
             "accepted": 0
+          },
+          "1723192451": {
+            "sent": 54,
+            "accepted": 2
           }
         }
       },
@@ -937,13 +937,13 @@
         "accept_pct": 11.4,
         "reply_pct": 5.7,
         "owner_stats": {
-          "1723192451": {
-            "sent": 94,
-            "accepted": 1
-          },
           "439119116": {
             "sent": 0,
             "accepted": 0
+          },
+          "1723192451": {
+            "sent": 94,
+            "accepted": 1
           }
         }
       },
@@ -961,18 +961,18 @@
         "target_count": 119,
         "sent": 119,
         "accepted": 28,
-        "messages": 68,
+        "messages": 69,
         "replied": 8,
         "accept_pct": 23.5,
         "reply_pct": 6.7,
         "owner_stats": {
-          "1723192451": {
-            "sent": 0,
-            "accepted": 0
-          },
           "439119116": {
             "sent": 29,
             "accepted": 1
+          },
+          "1723192451": {
+            "sent": 0,
+            "accepted": 0
           }
         }
       },
@@ -995,11 +995,11 @@
         "accept_pct": 24.1,
         "reply_pct": 10.3,
         "owner_stats": {
-          "1723192451": {
+          "439119116": {
             "sent": 0,
             "accepted": 0
           },
-          "439119116": {
+          "1723192451": {
             "sent": 0,
             "accepted": 0
           }
@@ -1013,8 +1013,8 @@
         "totals": {
           "sent": 270,
           "accepted": 52,
-          "messages": 90,
-          "replied": 15
+          "messages": 91,
+          "replied": 16
         }
       },
       {
@@ -1028,13 +1028,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-20T10:36:33.626463"
+    "fetched_at": "2026-05-20T19:36:28.427982"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-20T10:36:40.077668"
+    "fetched_at": "2026-05-20T19:36:35.208339"
   },
-  "cached_at": "2026-05-20T10:36:40.077732"
+  "cached_at": "2026-05-20T19:36:35.208397"
 }
