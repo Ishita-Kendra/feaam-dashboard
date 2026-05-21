@@ -11,17 +11,17 @@
         "parent_id": null,
         "client_name": "Ebru Avci",
         "is_sub": false,
-        "progress": 68.0,
+        "progress": 74.0,
         "total_leads": 100,
-        "sent": 100,
+        "sent": 123,
         "unique_sent": 100,
-        "opened": 68,
-        "unique_opened": 68,
+        "opened": 74,
+        "unique_opened": 74,
         "replied": 3,
         "positive": 1,
         "bounced": 3,
         "clicked": 0,
-        "open_pct": 68.0,
+        "open_pct": 74.0,
         "reply_pct": 3.0,
         "positive_pct": 33.3,
         "subsequences": [
@@ -397,15 +397,15 @@
         "is_sub": false,
         "progress": 63.6,
         "total_leads": 184,
-        "sent": 252,
-        "unique_sent": 184,
-        "opened": 117,
-        "unique_opened": 117,
+        "sent": 68,
+        "unique_sent": 68,
+        "opened": 1,
+        "unique_opened": 1,
         "replied": 0,
         "positive": 0,
         "bounced": 0,
         "clicked": 0,
-        "open_pct": 63.6,
+        "open_pct": 1.5,
         "reply_pct": 0.0,
         "positive_pct": 0,
         "subsequences": [
@@ -447,13 +447,13 @@
         "total_leads": 189,
         "sent": 80,
         "unique_sent": 80,
-        "opened": 4,
-        "unique_opened": 4,
+        "opened": 2,
+        "unique_opened": 2,
         "replied": 0,
         "positive": 0,
         "bounced": 0,
         "clicked": 0,
-        "open_pct": 5.0,
+        "open_pct": 2.5,
         "reply_pct": 0.0,
         "positive_pct": 0,
         "subsequences": [
@@ -468,17 +468,17 @@
             "is_sub": true,
             "progress": 50.9,
             "total_leads": 216,
-            "sent": 90,
-            "unique_sent": 90,
-            "opened": 88,
-            "unique_opened": 88,
-            "replied": 1,
+            "sent": 2,
+            "unique_sent": 2,
+            "opened": 1,
+            "unique_opened": 1,
+            "replied": 0,
             "positive": 0,
             "bounced": 0,
-            "clicked": 72,
-            "open_pct": 97.8,
-            "reply_pct": 1.1,
-            "positive_pct": 0.0
+            "clicked": 0,
+            "open_pct": 50.0,
+            "reply_pct": 0.0,
+            "positive_pct": 0
           }
         ]
       },
@@ -662,7 +662,7 @@
         "total_leads": 168,
         "sent": 0,
         "unique_sent": 0,
-        "opened": 3,
+        "opened": 2,
         "unique_opened": 2,
         "replied": 1,
         "positive": 4,
@@ -791,13 +791,13 @@
       }
     ],
     "totals": {
-      "sent": 1189,
-      "opened": 501,
+      "sent": 1028,
+      "opened": 388,
       "replied": 10,
       "positive": 16,
       "bounced": 10
     },
-    "fetched_at": "2026-05-20T19:36:23.231386"
+    "fetched_at": "2026-05-21T12:27:29.849384"
   },
   "aimfox": {
     "ok": true,
@@ -816,14 +816,14 @@
         "target_count": 124,
         "sent": 122,
         "accepted": 17,
-        "messages": 15,
+        "messages": 16,
         "replied": 5,
         "accept_pct": 13.9,
         "reply_pct": 4.1,
         "owner_stats": {
           "439119116": {
-            "sent": 106,
-            "accepted": 1
+            "sent": 105,
+            "accepted": 0
           },
           "1723192451": {
             "sent": 0,
@@ -1013,7 +1013,7 @@
         "totals": {
           "sent": 270,
           "accepted": 52,
-          "messages": 91,
+          "messages": 92,
           "replied": 16
         }
       },
@@ -1028,13 +1028,13 @@
         }
       }
     ],
-    "fetched_at": "2026-05-20T19:36:28.427982"
+    "fetched_at": "2026-05-21T12:27:35.030278"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-20T19:36:35.208339"
+    "fetched_at": "2026-05-21T12:27:42.837750"
   },
-  "cached_at": "2026-05-20T19:36:35.208397"
+  "cached_at": "2026-05-21T12:27:42.837793"
 }
