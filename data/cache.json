@@ -13,7 +13,7 @@
         "is_sub": false,
         "progress": 74.0,
         "total_leads": 100,
-        "sent": 123,
+        "sent": 128,
         "unique_sent": 100,
         "opened": 74,
         "unique_opened": 74,
@@ -109,16 +109,16 @@
         "is_sub": false,
         "progress": 100.0,
         "total_leads": 25,
-        "sent": 26,
-        "unique_sent": 25,
-        "opened": 25,
-        "unique_opened": 25,
+        "sent": 0,
+        "unique_sent": 0,
+        "opened": 0,
+        "unique_opened": 0,
         "replied": 0,
         "positive": 0,
         "bounced": 0,
         "clicked": 0,
-        "open_pct": 100.0,
-        "reply_pct": 0.0,
+        "open_pct": 0,
+        "reply_pct": 0,
         "positive_pct": 0,
         "subsequences": [
           {
@@ -151,22 +151,22 @@
         "name": "FEAAM_INT_USA_11-05-26",
         "status": "COMPLETED",
         "created_at": "2026-05-11T07:18:57.491Z",
-        "sequence_count": 2,
+        "sequence_count": 0,
         "parent_id": null,
-        "client_name": "Ebru Avci",
+        "client_name": "",
         "is_sub": false,
-        "progress": 100.0,
-        "total_leads": 87,
-        "sent": 166,
-        "unique_sent": 87,
-        "opened": 8,
-        "unique_opened": 8,
+        "progress": 0,
+        "total_leads": 0,
+        "sent": 0,
+        "unique_sent": 0,
+        "opened": 0,
+        "unique_opened": 0,
         "replied": 0,
         "positive": 0,
         "bounced": 0,
         "clicked": 0,
-        "open_pct": 9.2,
-        "reply_pct": 0.0,
+        "open_pct": 0,
+        "reply_pct": 0,
         "positive_pct": 0,
         "subsequences": [
           {
@@ -205,17 +205,17 @@
         "is_sub": false,
         "progress": 72.2,
         "total_leads": 79,
-        "sent": 79,
-        "unique_sent": 79,
-        "opened": 56,
-        "unique_opened": 56,
-        "replied": 1,
+        "sent": 0,
+        "unique_sent": 0,
+        "opened": 0,
+        "unique_opened": 0,
+        "replied": 0,
         "positive": 1,
-        "bounced": 2,
+        "bounced": 0,
         "clicked": 0,
-        "open_pct": 70.9,
-        "reply_pct": 1.3,
-        "positive_pct": 100.0,
+        "open_pct": 0,
+        "reply_pct": 0,
+        "positive_pct": 0,
         "subsequences": [
           {
             "id": 3286535,
@@ -253,17 +253,17 @@
         "is_sub": false,
         "progress": 100.0,
         "total_leads": 82,
-        "sent": 153,
-        "unique_sent": 82,
-        "opened": 49,
-        "unique_opened": 48,
-        "replied": 2,
+        "sent": 0,
+        "unique_sent": 0,
+        "opened": 0,
+        "unique_opened": 0,
+        "replied": 0,
         "positive": 0,
-        "bounced": 1,
+        "bounced": 0,
         "clicked": 0,
-        "open_pct": 58.5,
-        "reply_pct": 2.4,
-        "positive_pct": 0.0,
+        "open_pct": 0,
+        "reply_pct": 0,
+        "positive_pct": 0,
         "subsequences": [
           {
             "id": 3277531,
@@ -295,12 +295,12 @@
         "name": "FEAAM_28/04",
         "status": "ACTIVE",
         "created_at": "2026-04-28T13:02:13.224Z",
-        "sequence_count": 3,
+        "sequence_count": 0,
         "parent_id": null,
-        "client_name": "Ebru Avci",
+        "client_name": "",
         "is_sub": false,
-        "progress": 67.0,
-        "total_leads": 100,
+        "progress": 0,
+        "total_leads": 0,
         "sent": 140,
         "unique_sent": 100,
         "opened": 65,
@@ -487,12 +487,12 @@
         "name": "FEAAM _ 14 -04",
         "status": "ARCHIVED",
         "created_at": "2026-04-14T12:58:36.678Z",
-        "sequence_count": 3,
+        "sequence_count": 0,
         "parent_id": null,
-        "client_name": "Ebru Avci",
+        "client_name": "",
         "is_sub": false,
-        "progress": 96.5,
-        "total_leads": 86,
+        "progress": 0,
+        "total_leads": 0,
         "sent": 0,
         "unique_sent": 0,
         "opened": 5,
@@ -654,41 +654,41 @@
         "name": "FEAAM_Mobility - Mix All_06-04",
         "status": "ACTIVE",
         "created_at": "2026-04-06T05:36:42.149Z",
-        "sequence_count": 9,
+        "sequence_count": 0,
         "parent_id": null,
         "client_name": "",
         "is_sub": false,
-        "progress": 67.9,
-        "total_leads": 168,
+        "progress": 0,
+        "total_leads": 0,
         "sent": 0,
         "unique_sent": 0,
         "opened": 2,
         "unique_opened": 2,
         "replied": 1,
-        "positive": 4,
+        "positive": 0,
         "bounced": 0,
         "clicked": 0,
         "open_pct": 0,
         "reply_pct": 0,
-        "positive_pct": 400.0,
+        "positive_pct": 0.0,
         "subsequences": [
           {
             "id": 3132911,
             "name": "Open Emails",
             "status": "COMPLETED",
             "created_at": "2026-04-06T05:45:37.236Z",
-            "sequence_count": 1,
+            "sequence_count": 0,
             "parent_id": 3132832,
             "client_name": "",
             "is_sub": true,
-            "progress": 99.1,
-            "total_leads": 109,
+            "progress": 0,
+            "total_leads": 0,
             "sent": 0,
             "unique_sent": 0,
             "opened": 0,
             "unique_opened": 0,
             "replied": 0,
-            "positive": 4,
+            "positive": 0,
             "bounced": 0,
             "clicked": 1,
             "open_pct": 0,
@@ -791,13 +791,13 @@
       }
     ],
     "totals": {
-      "sent": 1028,
-      "opened": 388,
-      "replied": 10,
-      "positive": 16,
-      "bounced": 10
+      "sent": 609,
+      "opened": 250,
+      "replied": 7,
+      "positive": 12,
+      "bounced": 7
     },
-    "fetched_at": "2026-05-21T12:27:29.849384"
+    "fetched_at": "2026-05-21T19:31:21.075344"
   },
   "aimfox": {
     "ok": true,
@@ -821,12 +821,12 @@
         "accept_pct": 13.9,
         "reply_pct": 4.1,
         "owner_stats": {
-          "439119116": {
-            "sent": 105,
-            "accepted": 0
-          },
           "1723192451": {
             "sent": 0,
+            "accepted": 0
+          },
+          "439119116": {
+            "sent": 105,
             "accepted": 0
           }
         }
@@ -843,20 +843,20 @@
           "Dr. Gerling"
         ],
         "target_count": 218,
-        "sent": 28,
+        "sent": 29,
         "accepted": 9,
-        "messages": 12,
+        "messages": 13,
         "replied": 1,
-        "accept_pct": 32.1,
-        "reply_pct": 3.6,
+        "accept_pct": 31.0,
+        "reply_pct": 3.4,
         "owner_stats": {
+          "1723192451": {
+            "sent": 76,
+            "accepted": 6
+          },
           "439119116": {
             "sent": 0,
             "accepted": 0
-          },
-          "1723192451": {
-            "sent": 74,
-            "accepted": 5
           }
         }
       },
@@ -872,20 +872,20 @@
           "Dr. Gerling"
         ],
         "target_count": 30,
-        "sent": 20,
+        "sent": 21,
         "accepted": 3,
-        "messages": 1,
+        "messages": 3,
         "replied": 1,
-        "accept_pct": 15.0,
-        "reply_pct": 5.0,
+        "accept_pct": 14.3,
+        "reply_pct": 4.8,
         "owner_stats": {
+          "1723192451": {
+            "sent": 25,
+            "accepted": 2
+          },
           "439119116": {
             "sent": 0,
             "accepted": 0
-          },
-          "1723192451": {
-            "sent": 28,
-            "accepted": 3
           }
         }
       },
@@ -901,20 +901,20 @@
           "Dr. Gerling"
         ],
         "target_count": 70,
-        "sent": 21,
+        "sent": 22,
         "accepted": 3,
         "messages": 3,
         "replied": 1,
-        "accept_pct": 14.3,
-        "reply_pct": 4.8,
+        "accept_pct": 13.6,
+        "reply_pct": 4.5,
         "owner_stats": {
+          "1723192451": {
+            "sent": 55,
+            "accepted": 1
+          },
           "439119116": {
             "sent": 0,
             "accepted": 0
-          },
-          "1723192451": {
-            "sent": 54,
-            "accepted": 2
           }
         }
       },
@@ -930,20 +930,20 @@
           "Dr. Gerling"
         ],
         "target_count": 401,
-        "sent": 35,
+        "sent": 36,
         "accepted": 4,
-        "messages": 9,
+        "messages": 10,
         "replied": 2,
-        "accept_pct": 11.4,
-        "reply_pct": 5.7,
+        "accept_pct": 11.1,
+        "reply_pct": 5.6,
         "owner_stats": {
+          "1723192451": {
+            "sent": 102,
+            "accepted": 1
+          },
           "439119116": {
             "sent": 0,
             "accepted": 0
-          },
-          "1723192451": {
-            "sent": 94,
-            "accepted": 1
           }
         }
       },
@@ -966,13 +966,13 @@
         "accept_pct": 23.5,
         "reply_pct": 6.7,
         "owner_stats": {
-          "439119116": {
-            "sent": 29,
-            "accepted": 1
-          },
           "1723192451": {
             "sent": 0,
             "accepted": 0
+          },
+          "439119116": {
+            "sent": 29,
+            "accepted": 1
           }
         }
       },
@@ -995,11 +995,11 @@
         "accept_pct": 24.1,
         "reply_pct": 10.3,
         "owner_stats": {
-          "439119116": {
+          "1723192451": {
             "sent": 0,
             "accepted": 0
           },
-          "1723192451": {
+          "439119116": {
             "sent": 0,
             "accepted": 0
           }
@@ -1021,20 +1021,20 @@
         "id": "1723192451",
         "name": "Dr. Gerling",
         "totals": {
-          "sent": 104,
+          "sent": 108,
           "accepted": 19,
-          "messages": 25,
+          "messages": 29,
           "replied": 5
         }
       }
     ],
-    "fetched_at": "2026-05-21T12:27:35.030278"
+    "fetched_at": "2026-05-21T19:31:26.595602"
   },
   "all_positives": {
     "ok": true,
     "smartlead": [],
     "aimfox": [],
-    "fetched_at": "2026-05-21T12:27:42.837750"
+    "fetched_at": "2026-05-21T19:32:31.083583"
   },
-  "cached_at": "2026-05-21T12:27:42.837793"
+  "cached_at": "2026-05-21T19:32:31.083637"
 }
